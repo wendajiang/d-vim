@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 "------------------
 " Code Completions
 "------------------
-Plug 'Valloric/YouCompleteMe', { 'do': '/usr/local/bin/python3 install.py --clang-completer --go-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': '/usr/local/bin/python3 install.py --clang-completer --go-completer --rust-completer' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -11,6 +11,9 @@ Plug 'honza/vim-snippets'
 " Fast navigation
 "-----------------
 Plug 'Lokaltog/vim-easymotion'
+
+"------protobuf
+Plug 'uarun/vim-protobuf'
 
 "--------------
 " Fast editing
@@ -62,5 +65,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'pearofducks/ansible-vim'
 Plug 'tpope/vim-obsession'
 
+"--------rust--------
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
