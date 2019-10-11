@@ -330,6 +330,13 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+
+" easier navigation between file buffer 
+nnoremap [b :bprevious<CR> 
+nnoremap ]b :bnext<CR>
+nnoremap ]B :bfirst<CR> 
+nnoremap [B :blast<CR>
+
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
       \ if ! exists("g:leave_my_cursor_position_alone") |
