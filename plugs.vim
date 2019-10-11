@@ -37,6 +37,10 @@ Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'myusuf3/numbers.vim'
 
+"---------------------
+" autoformat
+"--------------------"
+Plug 'Chiel92/vim-autoformat'
 
 "----------------------------------------
 " Syntax/Indent for language enhancement

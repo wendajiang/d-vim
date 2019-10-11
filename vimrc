@@ -468,6 +468,11 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 
+" autoformat cpp file 
+let g:formatdef_my_cpp = '"astyle --style=attach --pad-oper --lineend=linux"'
+let g:formatters_cpp = ['my_cpp']
+" au BufWrite * :Autoformat
+
 
 " Check Python files with flake8 and pylint.
 " let b:ale_linters = ['pylint', 'flake8']
