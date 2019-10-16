@@ -22,6 +22,8 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sjl/gundo.vim'
 
+Plug 'kien/rainbow_parentheses.vim'
+
 "--------------
 " IDE features
 "--------------
