@@ -16,7 +16,6 @@ set fo+=mB
 " 设置光标超过78列折行
 " set tw=78
 
-let mapleader=";"
 " enable filetype dectection and ft specific plugin/indent
 filetype plugin indent on
 
@@ -201,6 +200,7 @@ let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 " Tagbar
+" autocmd VimEnter * TagbarToggle
 let g:tagbar_left=1
 let g:tagbar_width=30
 let g:tagbar_autofocus = 1
@@ -269,6 +269,7 @@ let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
 
 " nerdcommenter
+let mapleader=","
 let NERDSpaceDelims=1
 " nmap <D-/> :NERDComToggleComment<cr>
 let NERDCompactSexyComs=1

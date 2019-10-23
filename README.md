@@ -1,6 +1,8 @@
 ## Install
 
-`
-git clone     ~/.vim
-ln -s  ~/vimrc ~/.vimrc
-`
+git clone  url   ~/.vim
+ln -s  ~/.vim/vimrc ~/.vimrc
+
+open vim 
+input :PlugInstall 
+
