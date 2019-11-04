@@ -45,6 +45,7 @@ Plug 'myusuf3/numbers.vim'
 " autoformat
 "--------------------"
 Plug 'Chiel92/vim-autoformat'
+" vim-autoformat need brew install asytle
 
 "----------------------------------------
 " Syntax/Indent for language enhancement
