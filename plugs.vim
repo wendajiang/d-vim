@@ -66,6 +66,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'patstockwell/vim-monokai-tasty'
+" Plug 'sickill/vim-monokai'
 
 Plug 'ybian/smartim'
 Plug 'sheerun/vim-polyglot'

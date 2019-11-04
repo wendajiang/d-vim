@@ -47,7 +47,7 @@ endif
 " colorscheme onedark
 " let g:onedark_termcolors=256
 colorscheme vim-monokai-tasty
-"colorscheme dracula
+" colorscheme dracula
 "set background=dark
 "let g:gruvbox_termcolors=16
 "colorscheme solarized8
@@ -467,6 +467,7 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
 
 
 " autoformat cpp file 
