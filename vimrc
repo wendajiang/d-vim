@@ -1,4 +1,4 @@
- source ~/.vim/plugs.vim
+source ~/.vim/plugs.vim
 
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
@@ -35,8 +35,8 @@ set laststatus=2    " 启动显示状态行(1),总是显示状态行(2)
 set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
 " 显示中文帮助
 if version >= 603
-	set helplang=cn
-	set encoding=utf-8
+    set helplang=cn
+    set encoding=utf-8
 endif
 "--------
 " Vim UI
@@ -55,6 +55,23 @@ colorscheme vim-monokai-tasty
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
+
+" vim-visual-multi插件
+let g:Vm_maps = {}
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-n>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<C-n>'           " replace visual C-n
+let g:VM_maps["Select l"]           = '<S-Right>'       " start selecting left
+let g:VM_maps["Select h"]           = '<S-Left>'        " start selecting right
+let g:VM_maps["Select Cursor Down"] = '<M-C-j>'      " start selecting down
+let g:VM_maps["Select Cursor Up"]   = '<M-C-k>'        " start selecting up
+let g:VM_maps["Add Cursor Down"]    = '<C-j>'
+let g:VM_maps["Add Cursor Up"]      = '<C-k>'
+
+let g:VM_mouse_mappings = 1
+nmap   <D-LeftMouse>         <Plug>(VM-Mouse-Cursor)
+nmap   <D-RightMouse>        <Plug>(VM-Mouse-Word)
+nmap   <M-D-RightMouse>      <Plug>(VM-Mouse-Column)
 
 " 当右键单击窗口的时候，弹出快捷菜单
 set mousemodel=popup
@@ -152,23 +169,23 @@ let g:html_indent_style1 = "inc"
 "-----------------
 " Rainbow parentheses for Lisp and variants
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+            \ ['brown',       'RoyalBlue3'],
+            \ ['Darkblue',    'SeaGreen3'],
+            \ ['darkgray',    'DarkOrchid3'],
+            \ ['darkgreen',   'firebrick3'],
+            \ ['darkcyan',    'RoyalBlue3'],
+            \ ['darkred',     'SeaGreen3'],
+            \ ['darkmagenta', 'DarkOrchid3'],
+            \ ['brown',       'firebrick3'],
+            \ ['gray',        'RoyalBlue3'],
+            \ ['black',       'SeaGreen3'],
+            \ ['darkmagenta', 'DarkOrchid3'],
+            \ ['Darkblue',    'firebrick3'],
+            \ ['darkgreen',   'RoyalBlue3'],
+            \ ['darkcyan',    'SeaGreen3'],
+            \ ['darkred',     'DarkOrchid3'],
+            \ ['red',         'firebrick3'],
+            \ ]
 let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
@@ -190,7 +207,7 @@ let s:vim_tags = expand('~/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
 " 检测 ~/.cache/tags 不存在就新建 "
 if !isdirectory(s:vim_tags)
-   silent! call mkdir(s:vim_tags, 'p')
+    silent! call mkdir(s:vim_tags, 'p')
 endif
 
 
@@ -208,55 +225,55 @@ let g:tagbar_sort = 0
 let g:tagbar_compact = 1
 " tag for coffee
 if executable('coffeetags')
-  let g:tagbar_type_coffee = {
-        \ 'ctagsbin' : 'coffeetags',
-        \ 'ctagsargs' : '',
-        \ 'kinds' : [
-        \ 'f:functions',
-        \ 'o:object',
-        \ ],
-        \ 'sro' : ".",
-        \ 'kind2scope' : {
-        \ 'f' : 'object',
-        \ 'o' : 'object',
-        \ }
-        \ }
+    let g:tagbar_type_coffee = {
+                \ 'ctagsbin' : 'coffeetags',
+                \ 'ctagsargs' : '',
+                \ 'kinds' : [
+                \ 'f:functions',
+                \ 'o:object',
+                \ ],
+                \ 'sro' : ".",
+                \ 'kind2scope' : {
+                \ 'f' : 'object',
+                \ 'o' : 'object',
+                \ }
+                \ }
 
-  let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'sort' : 0,
-    \ 'kinds' : [
-        \ 'h:sections'
-    \ ]
-    \ }
+    let g:tagbar_type_markdown = {
+                \ 'ctagstype' : 'markdown',
+                \ 'sort' : 0,
+                \ 'kinds' : [
+                \ 'h:sections'
+                \ ]
+                \ }
 endif
 " tag for go  vim-go plugin 支持
 " let g:tagbar_type_go = {
-" 	\ 'ctagstype' : 'go',
-" 	\ 'kinds'     : [
-" 		\ 'p:package',
-" 		\ 'i:imports:1',
-" 		\ 'c:constants',
-" 		\ 'v:variables',
-" 		\ 't:types',
-" 		\ 'n:interfaces',
-" 		\ 'w:fields',
-" 		\ 'e:embedded',
-" 		\ 'm:methods',
-" 		\ 'r:constructor',
-" 		\ 'f:functions'
-" 	\ ],
-" 	\ 'sro' : '.',
-" 	\ 'kind2scope' : {
-" 		\ 't' : 'ctype',
-" 		\ 'n' : 'ntype'
-" 	\ },
-" 	\ 'scope2kind' : {
-" 		\ 'ctype' : 't',
-" 		\ 'ntype' : 'n'
-" 	\ },
-" 	\ 'ctagsbin'  : 'gotags',
-" 	\ 'ctagsargs' : '-sort -silent'
+"   \ 'ctagstype' : 'go',
+"   \ 'kinds'     : [
+"       \ 'p:package',
+"       \ 'i:imports:1',
+"       \ 'c:constants',
+"       \ 'v:variables',
+"       \ 't:types',
+"       \ 'n:interfaces',
+"       \ 'w:fields',
+"       \ 'e:embedded',
+"       \ 'm:methods',
+"       \ 'r:constructor',
+"       \ 'f:functions'
+"   \ ],
+"   \ 'sro' : '.',
+"   \ 'kind2scope' : {
+"       \ 't' : 'ctype',
+"       \ 'n' : 'ntype'
+"   \ },
+"   \ 'scope2kind' : {
+"       \ 'ctype' : 't',
+"       \ 'ntype' : 'n'
+"   \ },
+"   \ 'ctagsbin'  : 'gotags',
+"   \ 'ctagsargs' : '-sort -silent'
 " \ }
 
 " Nerd Tree
@@ -332,19 +349,19 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 
-" easier navigation between file buffer 
-nnoremap [b :bprevious<CR> 
+" easier navigation between file buffer
+nnoremap [b :bprevious<CR>
 nnoremap ]b :bnext<CR>
-nnoremap ]B :bfirst<CR> 
+nnoremap ]B :bfirst<CR>
 nnoremap [B :blast<CR>
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
-      \ if ! exists("g:leave_my_cursor_position_alone") |
-      \     if line("'\"") > 0 && line ("'\"") <= line("$") |
-      \         exe "normal g'\"" |
-      \     endif |
-      \ endif
+            \ if ! exists("g:leave_my_cursor_position_alone") |
+            \     if line("'\"") > 0 && line ("'\"") <= line("$") |
+            \         exe "normal g'\"" |
+            \     endif |
+            \ endif
 
 " w!! to sudo & write a file
 cmap w!! w !sudo tee >/dev/null %
@@ -411,21 +428,21 @@ let g:ycm_key_invoke_completion = '<c-z>'
 set completeopt=menu,menuone
 
 " let g:ycm_filetype_whitelist = {
-            " \ "c":1,
-            " \ "cpp":1,
-            " \ "objc":1,
-            " \ "go":1,
-            " \ "py":1,
-            " \ "java":1,
-            " \ "sh":1,
-            " \ "zsh":1,
-            " \ "zimbu":1,
-            " \ }
+" \ "c":1,
+" \ "cpp":1,
+" \ "objc":1,
+" \ "go":1,
+" \ "py":1,
+" \ "java":1,
+" \ "sh":1,
+" \ "zsh":1,
+" \ "zimbu":1,
+" \ }
 
 let g:ycm_semantic_triggers =  {
-			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-			\ 'cs,lua,javascript': ['re!\w{2}'],
-			\ }
+            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+            \ 'cs,lua,javascript': ['re!\w{2}'],
+            \ }
 
 
 " better key bindings for UltiSnipsExpandTrigger
@@ -454,28 +471,28 @@ nnoremap <leader>f :Files<cr>
 nnoremap <Leader>a :Rg<Cr>
 nnoremap <Leader>s :execute "Rg" expand("<cword>")<CR>
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
 
 
 
-" autoformat cpp file 
+" autoformat cpp file
 let g:formatdef_my_cpp = '"astyle --style=attach --pad-oper --lineend=linux"'
 let g:formatters_cpp = ['my_cpp']
 " au BufWrite * :Autoformat
 
-"" parenthesis auto color match 
+"" parenthesis auto color match
 "let g:rbpt_colorpairs = [
 "    \ ['brown',       'RoyalBlue3'],
 "    \ ['Darkblue',    'SeaGreen3'],
@@ -509,18 +526,18 @@ let g:rainbow_active = 1
 " let b:ale_fixers = ['yapf', 'autopep8']
 " Disable warnings about trailing whitespace for Python files.
 let g:ale_linters = {
-\   'python': ['pylint'],
-\   'json': ['fixjson'],
-\   'cpp': ['cppcheck','clang'],
-\   'go': ['go vet'],
-\}
+            \   'python': ['pylint'],
+            \   'json': ['fixjson'],
+            \   'cpp': ['cppcheck','clang'],
+            \   'go': ['go vet'],
+            \}
 
 let g:ale_fixers = {
-\   'python': ['yapf'],
-\   'json': ['fixjson'],
-\   'cpp': ['clang-format'],
-\   'scala': ['scalafmt'],
-\}
+            \   'python': ['yapf'],
+            \   'json': ['fixjson'],
+            \   'cpp': ['clang-format'],
+            \   'scala': ['scalafmt'],
+            \}
 
 let g:ale_fix_on_save = 1
 
@@ -537,10 +554,10 @@ let g:airline#extensions#ale#enabled = 1
 
 " hugo last modify time
 function! s:UpdateTimestamps()
-  let tstamp = strftime('%FT%T%z')
-  %s#lastmod: \zs.*\ze#\=tstamp#g
-  "%s#^lastmod: \(.*\)$#lastmod: \1=tstamp#g
-  echo 'New time: ' . tstamp
+    let tstamp = strftime('%FT%T%z')
+    %s#lastmod: \zs.*\ze#\=tstamp#g
+    "%s#^lastmod: \(.*\)$#lastmod: \1=tstamp#g
+    echo 'New time: ' . tstamp
 endfunction
 
 command! UpdateTimestamps call s:UpdateTimestamps()
@@ -563,10 +580,10 @@ set guioptions-=m           " 隐藏菜单栏
 set autoread
 
 if has("autocmd")
-      autocmd BufReadPost *
-          \ if line("'\"") > 0 && line("'\"") <= line("$") |
-          \   exe "normal g`\"" |
-          \ endif
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \   exe "normal g`\"" |
+                \ endif
 endif
 
 
@@ -577,48 +594,48 @@ endif
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()"
 ""定义函数SetTitle，自动插入文件头
 func SetTitle()
-	"如果文件类型为.sh文件
-	if &filetype == 'sh'
-		call setline(1,"\#!/bin/bash")
-		call append(line("."), "")
+    "如果文件类型为.sh文件
+    if &filetype == 'sh'
+        call setline(1,"\#!/bin/bash")
+        call append(line("."), "")
     elseif &filetype == 'python'
         call setline(1,"#!/usr/bin/env python")
         call append(line("."),"# coding=utf-8")
-	    call append(line(".")+1, "")
+        call append(line(".")+1, "")
 
     elseif &filetype == 'ruby'
         call setline(1,"#!/usr/bin/env ruby")
         call append(line("."),"# encoding: utf-8")
-	    call append(line(".")+1, "")
+        call append(line(".")+1, "")
 
-"    elseif &filetype == 'mkd'
-"        call setline(1,"<head><meta charset=\"UTF-8\"></head>")
-	else
-		call setline(1, "/*************************************************************************")
-		call append(line("."), "	> File Name: ".expand("%"))
-		call append(line(".")+1, "	> Author: ")
-		call append(line(".")+2, "	> Mail: ")
-		call append(line(".")+3, "	> Created Time: ".strftime("%c"))
-		call append(line(".")+4, " ************************************************************************/")
-		call append(line(".")+5, "")
-	endif
-	if expand("%:e") == 'cpp'
-		call append(line(".")+6, "#include<iostream>")
-		call append(line(".")+7, "using namespace std;")
-		call append(line(".")+8, "")
-	endif
-	if &filetype == 'c'
-		call append(line(".")+6, "#include<stdio.h>")
-		call append(line(".")+7, "")
-	endif
-	if expand("%:e") == 'h'
-		call append(line(".")+6, "#ifndef _".toupper(expand("%:r"))."_H")
-		call append(line(".")+7, "#define _".toupper(expand("%:r"))."_H")
-		call append(line(".")+8, "#endif")
-	endif
-	if &filetype == 'java'
-		call append(line(".")+6,"public class ".expand("%:r"))
-		call append(line(".")+7,"")
-	endif
-	"新建文件后，自动定位到文件末尾
+        "    elseif &filetype == 'mkd'
+        "        call setline(1,"<head><meta charset=\"UTF-8\"></head>")
+    else
+        call setline(1, "/*************************************************************************")
+        call append(line("."), "    > File Name: ".expand("%"))
+        call append(line(".")+1, "  > Author: ")
+        call append(line(".")+2, "  > Mail: ")
+        call append(line(".")+3, "  > Created Time: ".strftime("%c"))
+        call append(line(".")+4, " ************************************************************************/")
+        call append(line(".")+5, "")
+    endif
+    if expand("%:e") == 'cpp'
+        call append(line(".")+6, "#include<iostream>")
+        call append(line(".")+7, "using namespace std;")
+        call append(line(".")+8, "")
+    endif
+    if &filetype == 'c'
+        call append(line(".")+6, "#include<stdio.h>")
+        call append(line(".")+7, "")
+    endif
+    if expand("%:e") == 'h'
+        call append(line(".")+6, "#ifndef _".toupper(expand("%:r"))."_H")
+        call append(line(".")+7, "#define _".toupper(expand("%:r"))."_H")
+        call append(line(".")+8, "#endif")
+    endif
+    if &filetype == 'java'
+        call append(line(".")+6,"public class ".expand("%:r"))
+        call append(line(".")+7,"")
+    endif
+    "新建文件后，自动定位到文件末尾
 endfunc

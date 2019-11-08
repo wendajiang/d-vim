@@ -37,8 +37,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-repeat'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 Plug 'myusuf3/numbers.vim'
 
 "---------------------
