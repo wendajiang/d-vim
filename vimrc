@@ -407,9 +407,9 @@ let g:table_mode_corner="|"
 " youcompleteme
 " Override go-to.definition key shortcut to Ctrl-]
 " nnoremap <leader>gt :YcmCompleter GoTo<CR>
-" nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 nnoremap <C-]> :YcmCompleter GoTo<CR>
-nnoremap <g-]> :YcmCompleter GoToDefinition<CR>
+" nnoremap <g-]> :YcmCompleter GoToDefinition<CR>
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_filepath_completion_use_working_dir = 1
 
