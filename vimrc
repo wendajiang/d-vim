@@ -197,7 +197,7 @@ set sm
 
 " gutentags
 " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
-let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
+let g:gutentags_project_root = ['.project', '.maye']
 
 " 所生成的数据文件的名称 "
 let g:gutentags_ctags_tagfile = '.tags'
@@ -407,9 +407,13 @@ let g:table_mode_corner="|"
 " youcompleteme
 " Override go-to.definition key shortcut to Ctrl-]
 " nnoremap <leader>gt :YcmCompleter GoTo<CR>
+" 跳转快捷键
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 nnoremap <C-]> :YcmCompleter GoTo<CR>
 " nnoremap <g-]> :YcmCompleter GoToDefinition<CR>
+" python semantic completion
+let g:ycm_python_binary_path='/usr/local/bin/python3'
+" C family Completion Path
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_filepath_completion_use_working_dir = 1
 
@@ -419,6 +423,16 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 " there are some filetypes in ycm default config
 let g:ycm_filetype_blacklist = {}
+
+" 语法关键字补全
+let g:ycm_seed_identifiers_with_syntax = 1
+" 开启YCM基于标签引擎
+let g:ycm_collect_identifiers_from_tags_files = 1
+" 在注释中也能补全
+let g:ycm_complete_in_comments = 1
+" 在字符串中也能补全
+let g:ycm_complete_in_strings = 1
+
 
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_show_diagnostics_ui = 0
