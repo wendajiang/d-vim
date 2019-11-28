@@ -408,7 +408,7 @@ let g:table_mode_corner="|"
 " Override go-to.definition key shortcut to Ctrl-]
 " nnoremap <leader>gt :YcmCompleter GoTo<CR>
 " 跳转快捷键
-nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gt :YcmCompleter GoToDefinition<CR>
 nnoremap <C-]> :YcmCompleter GoTo<CR>
 " nnoremap <g-]> :YcmCompleter GoToDefinition<CR>
 " python semantic completion
