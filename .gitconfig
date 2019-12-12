@@ -1,0 +1,40 @@
+[http "http://github.com"]
+    proxy = 
+[https "https://github.com"]
+    proxy = 
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[alias]
+    co = checkout
+    ci = commit
+    br = branch
+    st = status
+    unstage = "reset HEAD"
+    last = "log -1"
+    lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    d = difftool
+[user]
+    name = wendajiang
+    email = wendajiang93@163.com
+
+
+[diff]
+    tool = vimdiff
+    ; tool = bc4
+[difftool]
+    prompt = false
+
+; [difftool "bc4"]
+    ; cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\"
+; [merge]
+    ; tool = bc4
+; [mergetool]
+    ; prompt = false
+; [mergetool "bc4"]
+    ; cmd = "/usr/local/bin/bcomp" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    ; trustExitCode = true
+[rerere]
+	enabled = true
