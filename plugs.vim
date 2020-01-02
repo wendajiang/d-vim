@@ -61,6 +61,7 @@ Plug 'fatih/vim-go'
 
 "------- c++/c tags---------
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
 
 "--------------
 " Color Schemes
