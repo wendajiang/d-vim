@@ -230,6 +230,27 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 " 禁用 gutentags 自动加载 gtags 数据库的行为
 let g:gutentags_auto_add_gtags_cscope = 0
 
+" 禁用gutentags_plus默认快捷键，自定义, 0 启用，1 禁用
+let g:gutentags_plus_nomap = 0
+" s find symbol reference under cursor 
+" g find symbol definition under cursor 
+" d functions called by this function 
+" c functions calling this function 
+" t find text string under cursor
+" e find egrep pattern under cursor 
+" f find file name under cursor
+" i find files #includeing the file name under cursor 
+" a find places where current symbol is assigned
+" noremap <silent> <leader>gs :GscopeFind s <C-R><C-W><cr> 
+" noremap <silent> <leader>gd :GscopeFind g <C-R><C-W><cr>
+" noremap <silent> <leader>c :GscopeFind c <C-R><C-W><cr>
+" noremap <silent> <leader>t :GscopeFind t <C-R><C-W><cr>
+" noremap <silent> <leader>e :GscopeFind e <C-R><C-W><cr>
+" noremap <silent> <leader>f :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
+" noremap <silent> <leader>i :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
+" noremap <silent> <leader>d :GscopeFind d <C-R><C-W><cr>
+" noremap <silent> <leader>a :GscopeFind a <C-R><C-W><cr>
+
 " Tagbar
 " autocmd VimEnter * TagbarToggle
 let g:tagbar_left=1
