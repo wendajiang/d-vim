@@ -491,7 +491,7 @@ set completeopt=menu,menuone
 " \ }
 
 let g:ycm_semantic_triggers =  {
-            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+            \ 'c,cpp,cc,python,java,go,erlang,perl': ['re!\w{2}'],
             \ 'cs,lua,javascript': ['re!\w{2}'],
             \ }
 
