@@ -1,21 +1,10 @@
-k-vim
+vim-plug(整合k-vim)
 =======================
 
-
-> VERSION: 9.2
-
-> LAST_UPDATE_TIME: 2017-07-29
-
-> 本次更新: 小版本更新, 支持vim8异步语法检查
-
-详细 [更新日志](https://github.com/wklken/k-vim/wiki/UPDATE_LOG)
 
 # 目标
 
 > Just a Better Vim Config. Keep it Simple.
-
-
-**PS**: 服务器端无插件`k-vim`简化版本(curl直接设置vimrc即可)[vim-for-server](https://github.com/wklken/vim-for-server) / vscode-vim配置(尽量一致的键位) [k-vim-vscode](https://github.com/wklken/k-vim-vscode)
 
 **PPS**: 一份tmux配置 [k-tmux](https://github.com/wklken/k-tmux)
 
@@ -29,7 +18,7 @@ k-vim
 ### 1. clone 到本地
 
 ```
-git clone https://github.com/wklken/k-vim.git
+git clone https://github.com/wendajiang/vim-plug
 ```
 
 
@@ -87,11 +76,11 @@ npm install -g eslint eslint-plugin-standard eslint-plugin-promise eslint-config
 
 ```
 进入目录, 执行安装
-# 注意原先装过的童鞋, 重装时，不要到~/.vim下执行(这是软连接指向k-vim真是目录)，必须到k-vim原生目录执行
+# 注意原先装过的童鞋, 重装时，不要到~/.vim下执行(这是软连接指向vim-plug真实目录)，必须到vim-plug原生目录执行
 # 会进入安装插件的列表，一安装是从github clone的，完全取决于网速, 之后会自动编译 YCM, 编译失败的话需要手动编译, 有问题见YCM文档
 # 如果发现有插件安装失败 可以进入vim, 执行`:PlugInstall'
 
-cd k-vim/
+cd vim-plug/
 sh -x install.sh
 ```
 
@@ -101,7 +90,7 @@ sh -x install.sh
 # 移除安装
 
 ```
-cd ~ && rm -rf .vim .vimrc .vimrc.bundles && cd -
+cd ~ && rm -rf .vim .vimrc .vimrc.plugged && cd -
 ```
 
 ---------------------------------
@@ -119,11 +108,11 @@ cd ~ && rm -rf .vim .vimrc .vimrc.bundles && cd -
 
 ### 选择安装插件集合
 
-编辑vimrc.bundles中
+编辑vimrc.plugged中
 
 ```
 " more options: ['json', 'nginx', 'golang', 'ruby', 'less', 'json', ]
-let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta']
+let g:bundle_groups=['python', 'markdown', 'tmux', 'beta']
 ```
 
 选定集合后, 使用插件管理工具进行安装/更新
@@ -267,34 +256,11 @@ ctrl+n    相对/绝对行号切换
     14. Python使用#进行注释时, 自动缩进
 ```
 
-------------------------
-------------------------
 
-### UPDATE_LOG
-
-version 9.2
-
-```
-插件部分:
-1. 增加 w0rp/ale 异步语法检查插件, 用户vim版本为8.0时自动启用. 非8时, 启用默认scrooloose/syntastic, 两套插件快捷键一致
-2. 切换使用flake8作为python风格检查(pip install pep8)
-3. 启用yapf作为python代码格式化(pip install yapf)
-4. 启用eslint作为javascript代码检查
-5. YCM 设置回车选中不再弹补全框
-
-细节:
-1. 新增快捷键 gv 选中并高亮最后一次插入的内容
-```
-
-### Contributors
-
-thx a lot. 可以给我提pull request:)
-
-查看详情 [git-contributors](https://github.com/wklken/k-vim/graphs/contributors)
 
 ### Inspire
 
-1. vimrc文件布局`vimrc+vimrc.bundles`配置方式参考 [maximum-awesome](https://github.com/square/maximum-awesome)
+1. vimrc文件布局`vimrc+vimrc.plugged`配置方式参考 [maximum-awesome](https://github.com/square/maximum-awesome)
 
 2. install.sh 参考`spf13-vim` 的`bootstrap.sh` [spf13-vim](https://github.com/spf13/spf13-vim)
 
@@ -304,28 +270,6 @@ thx a lot. 可以给我提pull request:)
 
 4. 插件挑选 [VimAwesome](http://vimawesome.com/)
 
-### Resources
 
-[链接](http://www.wklken.me/posts/2014/10/03/vim-resources.html)
-
-### Donation
-
-如果你认为对你有所帮助, You can Buy me a coffee:)
-
-
-![donation](https://raw.githubusercontent.com/wklken/gallery/master/donation/donation_w.jpg)
-
-------------------------
-------------------------
-
-The End!
-
-wklken (凌岳/pythoner/vim党预备党员)
-
-Github: https://github.com/wklken
-
-Blog: [http://www.wklken.me](http://www.wklken.me)
-
-2013-06-11 于深圳
 
 

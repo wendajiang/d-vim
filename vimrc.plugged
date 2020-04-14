@@ -16,7 +16,7 @@ filetype off " required! turn off
 
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:plugged_groups')
-    " let g:plugged_groups=['python', 'javascript', 'golang', 'php', 'ruby', 'shell', 'markdown', 'html', 'css', 'less', 'coffeescript', 'tmux', 'json', 'beta']
+    " let g:plugged_groups=['python', 'javascript', 'golang', 'php', 'ruby', 'shell', 'markdown', 'less', 'coffeescript', 'tmux', 'json', 'beta']
     let g:plugged_groups=['python', 'golang', 'markdown', 'tmux', 'shell', 'protobuf', 'beta']
 endif
 
@@ -266,15 +266,6 @@ if count(g:plugged_groups, 'json')
     Plug 'elzr/vim-json', {'for': 'json'}
 endif
 
-if count(g:plugged_groups, 'css')
-    " css
-    " not work in iterm2 which termianl selection is not xterm-256, and it slow
-    " Plug 'ap/vim-css-color'
-
-    " 这个有坑, see issue https://github.com/wklken/k-vim/issues/49
-    " Plug 'gorodinskiy/vim-coloresque'
-    " Plug 'lilydjwg/colorizer'
-endif
 
 if count(g:plugged_groups, 'less')
     " ###### vim.less : less 自动更新##########
@@ -282,10 +273,6 @@ if count(g:plugged_groups, 'less')
     " autocmd BufWritePost *.less :!lessc % > %:p:r.css
 endif
 
-if count(g:plugged_groups, 'html')
-    " ###### emmet HTML complete #########
-    " Plug 'mattn/emmet-vim'
-endif
 
 if count(g:plugged_groups, 'protobuf')
     " protobuf
