@@ -25,6 +25,9 @@ Plug 'sjl/gundo.vim'
 " Plug 'kien/rainbow_parentheses.vim'
 Plug 'luochen1990/rainbow'
 
+" c-space
+Plug 'vim-ctrlspace/vim-ctrlspace'
+
 
 "--------------
 " IDE features
@@ -59,9 +62,7 @@ Plug 'dhruvasagar/vim-table-mode'
 "------- Go ----------
 Plug 'fatih/vim-go'
 
-"------- c++/c tags---------
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'skywind3000/gutentags_plus'
+
 
 "--------------
 " Color Schemes
