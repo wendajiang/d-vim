@@ -6,12 +6,6 @@ vim-plug(整合k-vim)
 
 > Just a Better Vim Config. Keep it Simple.
 
-**PPS**: 一份tmux配置 [k-tmux](https://github.com/wklken/k-tmux)
-
----------------------------------
-
----------------------------------
-
 
 # 安装步骤
 
@@ -30,8 +24,8 @@ git clone https://github.com/wendajiang/vim-plug
 ```
 # ubuntu
 sudo apt-get install ctags
-sudo apt-get install build-essential cmake python-dev  #编译YCM自动补全插件依赖
-sudo apt-get install silversearcher-ag
+sudo apt-get install asytle
+sudo apt-get install clangd-9 
 
 # centos
 sudo yum install python-devel.x86_64
@@ -44,6 +38,7 @@ sudo yum install cmake
 brew install ctags
 brew install the_silver_searcher
 brew install asytle # for autoformat
+brew install llvm  # for coc-clangd
 ```
 
 ##### 2.2 使用Python
@@ -97,8 +92,6 @@ cd ~ && rm -rf .vim .vimrc .vimrc.plugged && cd -
 ---------------------------------
 
 # 常见问题
-
-详见 [wiki](https://github.com/wklken/k-vim/wiki) 以及  [issues](https://github.com/wklken/k-vim/issues)
 
 
 ------------------------
@@ -266,9 +259,11 @@ ctrl+n    相对/绝对行号切换
 
 2. 插件管理使用[Vim-plug](https://github.com/junegunn/vim-plug)
 
-3. 自动补全 [YCM](https://github.com/Valloric/YouCompleteMe)
+3. 自动补全 [coc.nvim](https://github.com/neoclide/coc.nvim)
 
-4. 插件挑选 [VimAwesome](http://vimawesome.com/)
+4. 插件挑选 [VimAwesome](http://vimawesome.com/)  
+
+5. 插件推荐 [知乎](https://zhuanlan.zhihu.com/p/58816186)
 
 
 

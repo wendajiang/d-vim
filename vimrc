@@ -26,6 +26,10 @@
 let mapleader = ','
 let g:mapleader = ','
 
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
 " 开启语法高亮
 syntax on
 " 高亮光标所在行
@@ -45,6 +49,8 @@ filetype plugin indent on
 "==========================================
 " General Settings 基础设置
 "==========================================
+
+set foldmethod=marker
 
 " 不知道是个啥
 " nmap <F7> :ALEFix<cr>
@@ -116,6 +122,12 @@ filetype plugin indent on
 set autoread
 " 启动的时候不显示那个援助乌干达儿童的提示
 set shortmess=atI
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
 
 " 备份,到另一个位置. 防止误删, 目前是取消备份
 "set backup
@@ -124,8 +136,10 @@ set shortmess=atI
 
 " 取消备份。 视情况自己改
 set nobackup
+set nowritebackup
 " 关闭交换文件
 set noswapfile
+
 
 
 " TODO: remove this, use gundo
@@ -206,7 +220,7 @@ set scrolloff=5
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 " 命令行（在状态行下）的高度，默认为1，这里是2
 set laststatus=2
-" 总是显示状态行
+" Give more space for displaying messages.
 set cmdheight=2
 
 " 显示行号
@@ -487,8 +501,8 @@ nnoremap ; :
 
 
 " 命令行模式增强，ctrl - a到行首， -e 到行尾
-cnoremap <C-j> <t_kd>
-cnoremap <C-k> <t_ku>
+" cnoremap <C-j> <t_kd>
+" cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
@@ -584,6 +598,14 @@ map Y y$
 vnoremap <leader>y "+y
 " 不加上,选中就会
 set clipboard-=autoselect
+" share system clipboard    
+if has('clipboard')
+    if has('unnamedplus')  " When possible use + register for copy-paste
+        set clipboard=unnamed,unnamedplus
+    else         " On mac and Windows, use * register for copy-paste
+        set clipboard=unnamed
+    endif
+endif
 
 " auto jump to end of select
 " vnoremap <silent> y y`]
