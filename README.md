@@ -37,6 +37,7 @@ brew install global # for gtags
 brew install the_silver_searcher
 brew install asytle # for autoformat
 brew install llvm  # for coc-clangd
+brew install yarn # install coc.nvim
 ```
 
 ##### 2.2 使用Python
