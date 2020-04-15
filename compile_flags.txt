@@ -1,0 +1,11 @@
+-Wall
+-Wextra
+-Werror
+-fexceptions
+-DNDEBUG
+-std=c++11
+-x
+-isystem/usr/local/include
+-isystem/usr/local/include/c++/9.3.0
+-I/usr/local/include/c++/9.3.0/x86_64-apple-darwin19
+-I.
