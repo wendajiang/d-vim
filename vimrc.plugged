@@ -144,7 +144,7 @@ Plug 'Chiel92/vim-autoformat'
 " vim-autoformat need brew install asytle
 
 " nerdtree
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 
 " ctrlspace
 Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -524,7 +524,7 @@ endif
 
 " cocnvim {{{
     " 启动coc.nvim自动安装的插件
-    let g:coc_global_extensions = ['coc-yaml', 'coc-json', 'coc-clangd' ]
+    let g:coc_global_extensions = ['coc-yaml', 'coc-json', 'coc-clangd', 'coc-explorer' ]
     " Use tab for trigger completion with characters ahead and navigate.
     " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
     " other plugin before putting this into your config.
@@ -560,8 +560,10 @@ endif
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
 
+    nmap tt :CocCommand explorer<CR>
+
     " Use K to show documentation in preview window.
-    nnoremap <silent> K :call <SID>show_documentation()<CR>
+    " nnoremap <silent> K :call <SID>show_documentation()<CR>
 
     function! s:show_documentation()
       if (index(['vim','help'], &filetype) >= 0)
@@ -646,29 +648,29 @@ endif
 " }}}
 
 " coc-explorer {{{
-    " let g:coc_explorer_global_presets = {
-    " \   '.vim': {
-    " \      'root-uri': '~/.vim',
-    " \   },
-    " \   'floating': {
-    " \      'position': 'floating',
-    " \   },
-    " \   'floatingLeftside': {
-    " \      'position': 'floating',
-    " \      'floating-position': 'left-center',
-    " \      'floating-width': 30,
-    " \   },
-    " \   'floatingRightside': {
-    " \      'position': 'floating',
-    " \      'floating-position': 'left-center',
-    " \      'floating-width': 30,
-    " \   },
-    " \   'simplify': {
-    " \     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-    " \   }
-    " \ }
+    let g:coc_explorer_global_presets = {
+    \   '.vim': {
+    \      'root-uri': '~/.vim',
+    \   },
+    \   'floating': {
+    \      'position': 'floating',
+    \   },
+    \   'floatingLeftside': {
+    \      'position': 'floating',
+    \      'floating-position': 'left-center',
+    \      'floating-width': 30,
+    \   },
+    \   'floatingRightside': {
+    \      'position': 'floating',
+    \      'floating-position': 'left-center',
+    \      'floating-width': 30,
+    \   },
+    \   'simplify': {
+    \     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+    \   }
+    \ }
 
-    " " Use preset argument to open it
+    " Use preset argument to open it
     " nmap <space>ed :CocCommand explorer --preset .vim<CR>
     " nmap <space>ef :CocCommand explorer --preset floating<CR>
 " }}}
@@ -958,43 +960,43 @@ endif
 " }}}
 
 " ################### 快速导航 ###################
-" coc-explorer 部分代替 nerdtree 配置保留
+" coc-explorer 代替 nerdtree 配置保留
 " nerdtree {{{
-    let g:NERDChristmasTree=0
-    let g:NERDTreeWinSize=30
-    let g:NERDTreeChDirMode=2
-    let g:NERDTreeShowBookmarks=1
-
-    " 列出当前目录文件
-    map <F6> :NERDTreeToggle<CR>
-    imap <F6> <ESC> :NERDTreeToggle<CR>
-
-    let NERDTreeHighlightCursorline=1
-    let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$', '\~$', '\.swp$' ]
-    
-    " s/v 分屏打开文件
-    let g:NERDTreeMapOpenSplit = 's'
-    let g:NERDTreeMapOpenVSplit = 'v'
-    " fix Nerdtree ^G before folder and file names OSX terminal vim
-    let g:NERDTreeNodeDelimiter = "\u00a0"
-
-
-    " nerdtreetabs
-    map <Leader>n <plug>NERDTreeTabsToggle<CR>
-    " 关闭同步
-    " let g:nerdtree_tabs_synchronize_view=0
-    " let g:nerdtree_tabs_synchronize_focus=0
-    " 是否自动开启nerdtree
-    " thank to @ListenerRi, see https://github.com/wklken/k-vim/issues/165
-    let g:nerdtree_tabs_open_on_console_startup=0
-    let g:nerdtree_tabs_open_on_gui_startup=0
-
-    let g:NERDTreeWinPos = "left"
-
-    "当打开vim且没有文件时自动打开NERDTree
-    autocmd vimenter * if !argc() | NERDTree | endif
-    " 只剩 NERDTree时自动关闭
-    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"    let g:NERDChristmasTree=0
+"    let g:NERDTreeWinSize=30
+"    let g:NERDTreeChDirMode=2
+"    let g:NERDTreeShowBookmarks=1
+"
+"    " 列出当前目录文件
+"    map <F6> :NERDTreeToggle<CR>
+"    imap <F6> <ESC> :NERDTreeToggle<CR>
+"
+"    let NERDTreeHighlightCursorline=1
+"    let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$', '\~$', '\.swp$' ]
+"    
+"    " s/v 分屏打开文件
+"    let g:NERDTreeMapOpenSplit = 's'
+"    let g:NERDTreeMapOpenVSplit = 'v'
+"    " fix Nerdtree ^G before folder and file names OSX terminal vim
+"    let g:NERDTreeNodeDelimiter = "\u00a0"
+"
+"
+"    " nerdtreetabs
+"    map <Leader>n <plug>NERDTreeTabsToggle<CR>
+"    " 关闭同步
+"    " let g:nerdtree_tabs_synchronize_view=0
+"    " let g:nerdtree_tabs_synchronize_focus=0
+"    " 是否自动开启nerdtree
+"    " thank to @ListenerRi, see https://github.com/wklken/k-vim/issues/165
+"    let g:nerdtree_tabs_open_on_console_startup=0
+"    let g:nerdtree_tabs_open_on_gui_startup=0
+"
+"    let g:NERDTreeWinPos = "left"
+"
+"    "当打开vim且没有文件时自动打开NERDTree
+"    autocmd vimenter * if !argc() | NERDTree | endif
+"    " 只剩 NERDTree时自动关闭
+"    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     
 " }}}
 
