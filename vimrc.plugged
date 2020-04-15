@@ -53,7 +53,7 @@ endif
 
 if count(g:plugged_groups, 'coc')
     " cocnvim smart engine
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 endif
 
 " quick edit
