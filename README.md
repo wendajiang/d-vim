@@ -22,6 +22,7 @@ git clone https://github.com/wendajiang/vim-plug
 ##### 2.1 系统依赖 # ctags, ag(the_silver_searcher)
 
 ```
+pip3 install pynvim
 # ubuntu
 sudo apt-get install ctags
 sudo apt-get install asytle
