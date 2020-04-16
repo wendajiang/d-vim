@@ -1,4 +1,4 @@
-vim-plug(整合k-vim)
+vim-plug
 =======================
 
 
@@ -19,27 +19,25 @@ git clone https://github.com/wendajiang/vim-plug
 ### 2. 安装依赖包
 
 
-##### 2.1 系统依赖 # ctags, ag(the_silver_searcher)
+##### 2.1 系统依赖 # ctags, gtags, ag(the_silver_searcher)
 
 ```
 pip3 install pynvim
+pip3 install pygments
 # ubuntu
-sudo apt-get install ctags
-sudo apt-get install asytle
-sudo apt-get install clangd-9 
+sudo apt install ctags
+sudo apt install gtags
+sudo apt install asytle
+sudo apt install clangd-9 
 
-# centos
-sudo yum install python-devel.x86_64
-sudo yum groupinstall 'Development Tools'
-sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-sudo yum install the_silver_searcher
-sudo yum install cmake
 
 # mac
 brew install ctags
+brew install global # for gtags
 brew install the_silver_searcher
 brew install asytle # for autoformat
 brew install llvm  # for coc-clangd
+brew install yarn # install coc.nvim
 ```
 
 ##### 2.2 使用Python

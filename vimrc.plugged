@@ -53,7 +53,7 @@ endif
 
 if count(g:plugged_groups, 'coc')
     " cocnvim smart engine
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 endif
 
 " quick edit
@@ -565,7 +565,7 @@ endif
 
 " cocnvim {{{
     " 启动coc.nvim自动安装的插件
-    let g:coc_global_extensions = ['coc-yaml', 'coc-json', 'coc-clangd', 'coc-explorer' ]
+    let g:coc_global_extensions = ['coc-yaml', 'coc-json', 'coc-explorer' ]
     " Use tab for trigger completion with characters ahead and navigate.
     " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
     " other plugin before putting this into your config.
