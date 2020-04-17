@@ -29,9 +29,12 @@ sudo apt install ctags
 sudo apt install gtags
 sudo apt install asytle
 sudo apt install clangd-9 
+sudo apt install node
+sudo apt install yarn
 
 
 # mac
+brew install yarn
 brew install ctags
 brew install global # for gtags
 brew install asytle # for autoformat

@@ -5,7 +5,7 @@
 "------------------------------------------- begin of configs --------------------------------------------
 
 " ################### 包依赖 #####################
-" package dependence:  ctags, gtags, clangd(llvm), asytle, asytle, nodejs
+" package dependence:  ctags, gtags, clangd(llvm), asytle, asytle, nodejs, yarn
 " python dependence:   pep8, pyflake, pynvim, pygments
 
 " 非兼容vi模式。去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
