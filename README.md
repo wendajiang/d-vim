@@ -1,10 +1,11 @@
-d-vim
+d-vim(包含tmux配置)
 =======================
 
 
 # 目标
 
 > Just a Better Vim Config. Keep it Simple.
+> tmux and vim is continuous process
 
 
 # 安装步骤
