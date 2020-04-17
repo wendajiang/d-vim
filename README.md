@@ -34,7 +34,6 @@ sudo apt install clangd-9
 # mac
 brew install ctags
 brew install global # for gtags
-brew install the_silver_searcher
 brew install asytle # for autoformat
 brew install llvm  # for coc-clangd
 brew install yarn # install coc.nvim
