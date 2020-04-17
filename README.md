@@ -48,24 +48,6 @@ brew install yarn # install coc.nvim
 sudo pip install flake8 yapf
 ```
 
-##### 2.3 如果使用Javascript(不需要的跳过)
-
-```
-# 安装jshint和jslint,用于javascript语法检查
-# 需要nodejs支持,各个系统安装见文档 https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
-
-# ubuntu
-sudo apt-get install nodejs npm
-sudo npm install -g jslint
-sudo npm install jshint -g
-sudo npm install -g eslint eslint-plugin-standard eslint-plugin-promise eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-html babel-eslint
-
-# mac
-brew install node
-npm install jshint -g
-npm install jslint -g
-npm install -g eslint eslint-plugin-standard eslint-plugin-promise eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-html babel-eslint
-```
 
 
 ### 3. 安装
@@ -254,7 +236,7 @@ ctrl+n    相对/绝对行号切换
 
 ### Inspire
 
-1. vimrc文件布局`vimrc+vimrc.plugged`配置方式参考 [maximum-awesome](https://github.com/square/maximum-awesome)
+1. vimrc文件布局`vimrc+vimrc.plugged`配置方式参考 [k-vim](https://github.com/wklken/k-vim)
 
 2. install.sh 参考`spf13-vim` 的`bootstrap.sh` [spf13-vim](https://github.com/spf13/spf13-vim)
 
@@ -265,6 +247,8 @@ ctrl+n    相对/绝对行号切换
 4. 插件挑选 [VimAwesome](http://vimawesome.com/)  
 
 5. 插件推荐 [知乎](https://zhuanlan.zhihu.com/p/58816186)
+
+6. tmux 配置参考 [.tmux](https://github.com/gpakosz/.tmux)
 
 
 
