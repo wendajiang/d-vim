@@ -1,4 +1,4 @@
-vim-plug
+d-vim
 =======================
 
 
@@ -12,7 +12,7 @@ vim-plug
 ### 1. clone 到本地
 
 ```
-git clone https://github.com/wendajiang/vim-plug
+git clone https://github.com/wendajiang/d-plug
 ```
 
 
@@ -69,11 +69,11 @@ npm install -g eslint eslint-plugin-standard eslint-plugin-promise eslint-config
 
 ```
 进入目录, 执行安装
-# 注意原先装过的童鞋, 重装时，不要到~/.vim下执行(这是软连接指向vim-plug真实目录)，必须到vim-plug原生目录执行
+# 注意原先装过的童鞋, 重装时，不要到~/.vim下执行(这是软连接指向d-vim真实目录)，必须到d-vim原生目录执行
 # 会进入安装插件的列表，一安装是从github clone的，完全取决于网速, 之后会自动编译 YCM, 编译失败的话需要手动编译, 有问题见YCM文档
 # 如果发现有插件安装失败 可以进入vim, 执行`:PlugInstall'
 
-cd vim-plug/
+cd d-vim/
 sh -x install.sh
 ```
 
