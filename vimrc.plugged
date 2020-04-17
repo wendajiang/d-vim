@@ -176,6 +176,17 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " 自动补全括号
 Plug 'jiangmiao/auto-pairs'
 
+" 内容搜索
+Plug 'dyng/ctrlsf.vim'
+" ctrlsf {{{
+    let g:ctrlsf_populate_qflist = 1
+    if v:version > 800
+        let g:ctrlsf_search_mode = 'async'
+    endif 
+    let g:ctrlsf_position = 'left'
+    let g:ctrlsf_winsize = '30%'
+" }}}
+
 if count(g:plugged_groups, 'ycm')
     " auto complete
     " 代码自动补全

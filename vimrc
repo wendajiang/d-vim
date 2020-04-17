@@ -50,8 +50,6 @@ filetype plugin indent on
 " General Settings 基础设置
 "==========================================
 
-set foldmethod=marker
-
 " 不知道是个啥
 " nmap <F7> :ALEFix<cr>
 " nnoremap <leader>v V`]
