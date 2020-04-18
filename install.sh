@@ -51,6 +51,10 @@ lnif() {
     fi
 }
 
+echo "Setp0: install tmux conf "
+lnif $CURRENT_DIR/tmux.conf $HOME/.tmux.conf
+lnif $CURRENT_DIR/tmux.conf.local $HOME/.tmux.conf.local
+
 
 echo "Step1: backing up current vim config"
 today=`date +%Y%m%d`

@@ -1,10 +1,11 @@
-vim-plug
+d-vim(包含tmux配置)
 =======================
 
 
 # 目标
 
 > Just a Better Vim Config. Keep it Simple.
+> tmux and vim is continuous process
 
 
 # 安装步骤
@@ -12,7 +13,7 @@ vim-plug
 ### 1. clone 到本地
 
 ```
-git clone https://github.com/wendajiang/vim-plug
+git clone https://github.com/wendajiang/d-plug
 ```
 
 
@@ -29,12 +30,14 @@ sudo apt install ctags
 sudo apt install gtags
 sudo apt install asytle
 sudo apt install clangd-9 
+sudo apt install node
+sudo apt install yarn
 
 
 # mac
+brew install yarn
 brew install ctags
 brew install global # for gtags
-brew install the_silver_searcher
 brew install asytle # for autoformat
 brew install llvm  # for coc-clangd
 brew install yarn # install coc.nvim
@@ -46,35 +49,17 @@ brew install yarn # install coc.nvim
 sudo pip install flake8 yapf
 ```
 
-##### 2.3 如果使用Javascript(不需要的跳过)
-
-```
-# 安装jshint和jslint,用于javascript语法检查
-# 需要nodejs支持,各个系统安装见文档 https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
-
-# ubuntu
-sudo apt-get install nodejs npm
-sudo npm install -g jslint
-sudo npm install jshint -g
-sudo npm install -g eslint eslint-plugin-standard eslint-plugin-promise eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-html babel-eslint
-
-# mac
-brew install node
-npm install jshint -g
-npm install jslint -g
-npm install -g eslint eslint-plugin-standard eslint-plugin-promise eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-html babel-eslint
-```
 
 
 ### 3. 安装
 
 ```
 进入目录, 执行安装
-# 注意原先装过的童鞋, 重装时，不要到~/.vim下执行(这是软连接指向vim-plug真实目录)，必须到vim-plug原生目录执行
+# 注意原先装过的童鞋, 重装时，不要到~/.vim下执行(这是软连接指向d-vim真实目录)，必须到d-vim原生目录执行
 # 会进入安装插件的列表，一安装是从github clone的，完全取决于网速, 之后会自动编译 YCM, 编译失败的话需要手动编译, 有问题见YCM文档
 # 如果发现有插件安装失败 可以进入vim, 执行`:PlugInstall'
 
-cd vim-plug/
+cd d-vim/
 sh -x install.sh
 ```
 
@@ -252,7 +237,7 @@ ctrl+n    相对/绝对行号切换
 
 ### Inspire
 
-1. vimrc文件布局`vimrc+vimrc.plugged`配置方式参考 [maximum-awesome](https://github.com/square/maximum-awesome)
+1. vimrc文件布局`vimrc+vimrc.plugged`配置方式参考 [k-vim](https://github.com/wklken/k-vim)
 
 2. install.sh 参考`spf13-vim` 的`bootstrap.sh` [spf13-vim](https://github.com/spf13/spf13-vim)
 
@@ -263,6 +248,8 @@ ctrl+n    相对/绝对行号切换
 4. 插件挑选 [VimAwesome](http://vimawesome.com/)  
 
 5. 插件推荐 [知乎](https://zhuanlan.zhihu.com/p/58816186)
+
+6. tmux 配置参考 [.tmux](https://github.com/gpakosz/.tmux)
 
 
 

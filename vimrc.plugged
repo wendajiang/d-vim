@@ -5,8 +5,8 @@
 "------------------------------------------- begin of configs --------------------------------------------
 
 " ################### 包依赖 #####################
-" package dependence:  ctags, ag(he_silver_searcher)
-" python dependence:   pep8, pyflake
+" package dependence:  ctags, gtags, clangd(llvm), asytle, asytle, nodejs, yarn
+" python dependence:   pep8, pyflake, pynvim, pygments
 
 " 非兼容vi模式。去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
 set nocompatible
@@ -175,6 +175,17 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " 自动补全括号
 Plug 'jiangmiao/auto-pairs'
+
+" 内容搜索
+Plug 'dyng/ctrlsf.vim'
+" ctrlsf {{{
+    let g:ctrlsf_populate_qflist = 1
+    if v:version > 800
+        let g:ctrlsf_search_mode = 'async'
+    endif 
+    let g:ctrlsf_position = 'left'
+    let g:ctrlsf_winsize = '30%'
+" }}}
 
 if count(g:plugged_groups, 'ycm')
     " auto complete
@@ -618,7 +629,6 @@ Plug 'terryma/vim-expand-region'
 " visualmulti
 Plug 'mg979/vim-visual-multi'
 
-
 " quick run
 " quickrun
 Plug 'thinca/vim-quickrun'
@@ -682,6 +692,14 @@ if count(g:plugged_groups, 'tmux')
     " tmux
     " For tmux navigator Ctrl-hjkl
     Plug 'christoomey/vim-tmux-navigator'
+
+    " tmux {{{
+        " for tmux
+        if exists('$TMUX')
+            set term=screen-256color
+        endif
+    " }}}
+
 endif
 
 if count(g:plugged_groups, 'markdown')
@@ -706,6 +724,26 @@ if count(g:plugged_groups, 'golang')
     " 2. :GoInstallBinaries
     " vimgo  https://github.com/fatih/vim-go
     Plug 'fatih/vim-go', {'for': 'go'}
+
+    " vimgo {{{
+        let g:go_highlight_functions = 1
+        let g:go_highlight_methods = 1
+        let g:go_highlight_fields = 1
+        let g:go_highlight_types = 1
+        let g:go_highlight_function_parameters = 1
+        let g:go_highlight_structs = 1
+        let g:go_highlight_operators = 1
+        let g:go_highlight_build_constraints = 1
+
+        let g:go_fmt_command = "goimports"
+        let g:go_def_mode = 'gopls'
+        let g:go_info_mode='gopls'
+        let g:go_fmt_fail_silently = 1
+        " format with goimports instead of gofmt
+        let g:go_fmt_command = "goimports"
+        let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+        let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go', 'java'] }
+    " }}}
 endif
 
 
@@ -715,6 +753,10 @@ if count(g:plugged_groups, 'python')
     Plug 'hdima/python-syntax'
     Plug 'hynek/vim-python-pep8-indent'
     Plug 'Glench/Vim-Jinja2-Syntax'
+
+    " pythonsyntax {{{
+        let python_highlight_all = 1
+    " }}}
 
     " isort  https://github.com/timothycrosley/isort#readme + https://github.com/fisadev/vim-isort#installation
     " pip install isort
@@ -727,6 +769,10 @@ if count(g:plugged_groups, 'php')
     " piv
     " shift-v可以查看函数手册 / leader-pd生成注释
     Plug 'spf13/PIV'
+
+    " piv {{{
+        let g:DisableAutoPHPFolding = 1
+    " }}}
 endif
 
 if count(g:plugged_groups, 'ruby')
@@ -753,12 +799,23 @@ if count(g:plugged_groups, 'javascript')
     " 安装完成后还需要在 bundle/tern_for_vim 下执行 npm install 安装依赖 `cd ~/.vim/plugged/tern_for_vim && npm install`
     " see https://github.com/marijnh/tern_for_vim
     " Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
+
+    " javascript {{{
+        " pangloss/vim-javascript
+        let g:html_indent_inctags = "html,body,head,tbody"
+        let g:html_indent_script1 = "inc"
+        let g:html_indent_style1 = "inc"
+    " }}}
 endif
 
 
 if count(g:plugged_groups, 'rust')
     " rust 
     Plug 'rust-lang/rust.vim'
+
+    " rust {{{
+        " let g:rustfmt_autosave = 1
+    " }}}
 endif
 
 
@@ -812,23 +869,12 @@ call plug#end()
 
 " ################### 基础 ######################
 
-" tmux {{{
-    " for tmux
-    if exists('$TMUX')
-        set term=screen-256color
-    endif
-" }}}
-
-
-
 " autoformat {{{
     " autoformat cpp file
     let g:formatdef_my_cpp = '"astyle --style=attach --pad-oper --lineend=linux"'
     let g:formatters_cpp = ['my_cpp']
     " au BufWrite * :Autoformat
 " }}}
-
-
 
 
 " ################### 自动补全 ###################
@@ -1009,6 +1055,7 @@ call plug#end()
 
 " }}}
 
+" #################  多列编辑 ##################
 
 " visualmulti {{{
     " https://github.com/mg979/vim-visual-multi/wiki/Quick-start
@@ -1029,10 +1076,6 @@ call plug#end()
 " }}}
 
 " ################### 功能相关 ###################
-
-" rust {{{
-    " let g:rustfmt_autosave = 1
-" }}}
 
 
 " git.  git操作还是习惯命令行,vim里面处理简单diff编辑操作
@@ -1158,7 +1201,6 @@ call plug#end()
 " ################### 快速导航 ###################
 
 
-
 " Vim Workspace Controller
 " ctrlspace {{{
     let g:airline_exclude_preview = 1
@@ -1182,47 +1224,6 @@ call plug#end()
     nmap <Leader>r <Plug>(quickrun)
     map <F10> :QuickRun<CR>
 " }}}
-
-
-" pythonsyntax {{{
-    let python_highlight_all = 1
-" }}}
-
-" piv {{{
-    let g:DisableAutoPHPFolding = 1
-" }}}
-
-
-" vimgo {{{
-    let g:go_highlight_functions = 1
-    let g:go_highlight_methods = 1
-    let g:go_highlight_fields = 1
-    let g:go_highlight_types = 1
-    let g:go_highlight_function_parameters = 1
-    let g:go_highlight_structs = 1
-    let g:go_highlight_operators = 1
-    let g:go_highlight_build_constraints = 1
-
-    let g:go_fmt_command = "goimports"
-    let g:go_def_mode = 'gopls'
-    let g:go_info_mode='gopls'
-    let g:go_fmt_fail_silently = 1
-    " format with goimports instead of gofmt
-    let g:go_fmt_command = "goimports"
-    let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-    let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go', 'java'] }
-" }}}
-
-
-
-" javascript {{{
-    " pangloss/vim-javascript
-    let g:html_indent_inctags = "html,body,head,tbody"
-    let g:html_indent_script1 = "inc"
-    let g:html_indent_style1 = "inc"
-" }}}
-
-
 
 
 
