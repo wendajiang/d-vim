@@ -185,6 +185,7 @@ Plug 'dyng/ctrlsf.vim'
     endif 
     let g:ctrlsf_position = 'left'
     let g:ctrlsf_winsize = '30%'
+    let g:ctrlsf_ackprg = 'ag'
 " }}}
 
 if count(g:plugged_groups, 'ycm')
