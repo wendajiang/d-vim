@@ -545,6 +545,8 @@ if count(g:plugged_groups, 'coc')
         let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
         let g:vista_sidebar_width = 30
         let g:vista_echo_cursor_strategy = 'floating_win'
+        " 设置为0，以禁用光标移动时的回显.
+        let g:vista_echo_cursor = 1
 
         " Executive used when opening vista sidebar without specifying it.
         " See all the avaliable executives via `:echo g:vista#executives`.
@@ -577,6 +579,8 @@ if count(g:plugged_groups, 'coc')
         \ "function": "\uf30b",
         \ "variable": "\uf5c0",
         \ }
+
+        let g:vista_finder_alternative_executives = ['coc']
 
     " }}}
 endif
