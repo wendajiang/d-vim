@@ -65,7 +65,7 @@
 	],
 	"signature.target": "float",
 	"yank.enableCompletion" : false,
-	"explorer.width": 38,
+	"explorer.width": 30,
 	"explorer.quitOnOpen": true,
 	"explorer.sources": [
 		{
