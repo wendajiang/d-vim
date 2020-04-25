@@ -505,6 +505,9 @@ nnoremap ; :
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+
 
 " 搜索相关
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
