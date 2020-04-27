@@ -20,7 +20,7 @@ if !exists('g:plugged_groups')
     " ycm / coc 二选一, 否则会有冲突, vim>8 or neovim 推荐使用 coc 
     " ycm --> nerdtree + tagbar + json 
     " cocnvim --> coc-explorer + vista + coc-json
-    let g:plugged_groups=['python', 'golang', 'markdown', 'tmux', 'shell', 'protobuf', 'coc', 'beta']
+    let g:plugged_groups=['python', 'golang', 'markdown', 'tmux', 'shell', 'protobuf', 'coc', 'graphviz', 'beta']
 endif
 
 " ----------------------------------------------------------------------------
@@ -379,6 +379,20 @@ if count(g:plugged_groups, 'ycm')
         let g:vim_json_syntax_conceal = 0
     " }}}
 
+endif
+
+if count(g:plugged_groups, 'graphviz')
+    Plug 'liuchengxu/graphviz.vim'
+
+    " How to open the generated output file.
+    " If does not exist, graphviz.vim will automatically choose the right way depending on the platform.
+    " let g:graphviz_viewer = 'open'
+    
+    " Default output format. Default is 'pdf'.
+    " let g:graphviz_output_format = 'pdf'
+    
+    " Options passed on to dot. Default is ''.
+    " let g:graphviz_shell_option = ''
 endif
 
 if count(g:plugged_groups, 'coc')
