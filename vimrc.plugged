@@ -685,13 +685,6 @@ Plug 'luochen1990/rainbow'
 Plug 'tomasr/molokai'
 Plug 'patstockwell/vim-monokai-tasty'
 
-"---------------------
-" autoformat
-"--------------------"
-Plug 'Chiel92/vim-autoformat'
-" vim-autoformat need brew install asytle
-
-
 
 " ctrlspace
 Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -891,12 +884,6 @@ call plug#end()
 
 " ################### 基础 ######################
 
-" autoformat {{{
-    " autoformat cpp file
-    let g:formatdef_my_cpp = '"astyle --style=attach --pad-oper --lineend=linux"'
-    let g:formatters_cpp = ['my_cpp']
-    " au BufWrite * :Autoformat
-" }}}
 
 
 " ################### 自动补全 ###################

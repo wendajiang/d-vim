@@ -29,7 +29,6 @@ pip3 install pygments
 sudo apt install ctags
 sudo apt install silversearcher-ag
 sudo apt install gtags
-sudo apt install asytle
 sudo apt install clangd-9 
 sudo apt install node
 sudo apt install yarn
@@ -40,7 +39,6 @@ brew install yarn
 brew install ctags
 brew install the_silver_searcher # ag for ctrlsf
 brew install global # for gtags
-brew install asytle # for autoformat
 brew install llvm  # for coc-clangd
 brew install yarn # install coc.nvim
 ```
