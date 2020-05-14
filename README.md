@@ -32,6 +32,7 @@ sudo apt install gtags
 sudo apt install clangd-9 
 sudo apt install node
 sudo apt install yarn
+sudo apt install ripgrep
 
 
 # mac
@@ -41,6 +42,7 @@ brew install the_silver_searcher # ag for ctrlsf
 brew install global # for gtags
 brew install llvm  # for coc-clangd
 brew install yarn # install coc.nvim
+brew install ripgrep  # leaderf rg 强烈推荐, 可以替代ctrlsf
 ```
 
 ##### 2.2 使用Python
