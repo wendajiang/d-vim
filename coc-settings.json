@@ -66,7 +66,7 @@
 	"signature.target": "float",
 	"yank.enableCompletion" : false,
 	"explorer.width": 30,
-	"explorer.quitOnOpen": true,
+	"explorer.quitOnOpen": false,
 	"explorer.sources": [
 		{
 			"name": "buffer",
