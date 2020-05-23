@@ -84,7 +84,7 @@
 	"explorer.keyMappingMode": "none",
 	"explorer.buffer.showHiddenBuffers": false,
 	"explorer.keyMappings": {
-        "i": "unmap",
+        "i": "false",
 
 		"k": "nodePrev",
         "j": "nodeNext",
