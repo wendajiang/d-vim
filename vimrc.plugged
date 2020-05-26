@@ -548,6 +548,22 @@ if count(g:plugged_groups, 'coc')
         \ }
 
         autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+        
+        function! AuCocExplorerAutoOpen()
+            let l:use_floating = 0
+
+            " Auto-open explorer when there's no file to show.
+            if @% == '' || @% == '.'
+                if l:use_floating
+                    exe ':CocCommand explorer --position floating'
+                else
+                    autocmd User CocExplorerOpenPost ++once exe ':only'
+                    exe ':CocCommand explorer'
+                endif
+            endif
+        endfunction
+        
+        autocmd User CocNvimInit call AuCocExplorerAutoOpen()
 
         " Use preset argument to open it
         " nmap <space>ed :CocCommand explorer --preset .vim<CR>
