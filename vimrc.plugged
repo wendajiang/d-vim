@@ -547,6 +547,8 @@ if count(g:plugged_groups, 'coc')
         \   }
         \ }
 
+        autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+
         " Use preset argument to open it
         " nmap <space>ed :CocCommand explorer --preset .vim<CR>
         " nmap <space>ef :CocCommand explorer --preset floating<CR>
