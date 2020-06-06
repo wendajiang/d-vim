@@ -1,4 +1,5 @@
 #!/bin/bash
+# sh -x installzsh.sh
 
 # cp zshrc to ~/.zshrc
 mv ~/.zshrc ~/.zshrc.bak
@@ -9,12 +10,12 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 
 # install autojump
 sysOS=`uname -s`
-if [ $sysOS == "Darwin" ];then
+if [ "$sysOS" = "Darwin" ];then
 	# macos
     brew install autojump
     echo '[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh' >> ~/.zshrc
     echo 'source $ZSH/oh-my-zsh.sh' >> ~/.zshrc
-elif [ $sysOS == "Linux" ];then
+elif [ "$sysOS" = "Linux" ];then
 	#linux 
     git clone git://github.com/joelthelion/autojump.git
     cd autojump
