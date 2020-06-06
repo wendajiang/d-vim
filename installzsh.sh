@@ -24,6 +24,7 @@ else
 	echo "Other OS: $sysOS"
 fi
 
+ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 # install zsh-autosuggestion
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
