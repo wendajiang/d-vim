@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# cp zshrc to ~/.zshrc
+mv ~/.zshrc ~/.zshrc.bak
+cp ./zshrc ~/.zshrc
+
 # 安装oh-my-zsh到 ~/.oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -26,9 +31,5 @@ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh
 # install zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-
-# cp zshrc to ~/.zshrc
-mv ~/.zshrc ~/.zshrc.bak
-cp ./zshrc ~/.zshrc
 
 
