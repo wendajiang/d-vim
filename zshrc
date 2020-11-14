@@ -128,6 +128,11 @@ function proxy_on() {
     export https_proxy=$http_proxy
     echo -e "已开启代理"
 }
+
+function delete_bedge() {
+    defaults delete com.apple.preferences.softwareupdate
+    softwareupdate --list
+}
 # export PATH="/usr/local/bin:$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
 #export PATH="$HOME/anaconda3/envs/py2/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
