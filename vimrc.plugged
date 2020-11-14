@@ -590,6 +590,7 @@ if count(g:plugged_groups, 'coc')
           \ 'cpp': 'coc',
           \ 'go': 'coc',
           \ 'c': 'coc',
+          \ 'rust': 'coc',
           \ }
 
         " 跳转到标记后闪烁光标2次，间隔100ms.
