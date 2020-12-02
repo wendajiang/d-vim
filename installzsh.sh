@@ -9,6 +9,8 @@ cp ./.p10k.zsh ~/.p10k.zsh
 # 安装oh-my-zsh到 ~/.oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+brew cask install font-firacode-nerd-font
+
 # install autojump
 sysOS=`uname -s`
 if [ "$sysOS" = "Darwin" ];then
