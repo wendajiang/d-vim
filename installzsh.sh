@@ -4,6 +4,7 @@
 # cp zshrc to ~/.zshrc
 mv ~/.zshrc ~/.zshrc.bak
 cp ./zshrc ~/.zshrc
+cp ./.p10k.zsh ~/.p10k.zsh
 
 # 安装oh-my-zsh到 ~/.oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -36,5 +37,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 # install powerlevel9k/powerlevel9k
 git clone https://github.com/bhilburn/powerlevel9k.git $ZSH_CUSTOM/themes/powerlevel9k
 
+# install powerlevel10k/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 
