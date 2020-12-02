@@ -18,7 +18,12 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
 # ZSH_THEME="powerlevel9k/powerlevel9k"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+if [[ $ZSH_VERSION > "5.1" ]] {
+    ZSH_THEME="powerlevel10k/powerlevel10k"
+} else {
+    ZSH_THEME="powerlevel9k/powerlevel9k"
+}
+
 DEFAULT_USER="david"
 
 # Set list of themes to pick from when loading at random
