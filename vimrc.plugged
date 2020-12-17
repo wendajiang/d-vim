@@ -613,13 +613,6 @@ if count(g:plugged_groups, 'coc')
     " }}}
 endif
 
-" quick edit
-" 快速注释
-Plug 'scrooloose/nerdcommenter'
-
-" 模糊搜索
-" leaderf
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
 " 快速加入修改环绕字符
 " for repeat -> enhance surround.vim, . to repeat command
@@ -662,9 +655,8 @@ Plug 'terryma/vim-expand-region'
 " visualmulti
 Plug 'mg979/vim-visual-multi'
 
-" quick run
-" quickrun
-Plug 'thinca/vim-quickrun'
+" On-demand lazy load
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 " git
 " fugitive
@@ -700,9 +692,17 @@ Plug 'patstockwell/vim-monokai-tasty'
 " ctrlspace
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
+" 模糊搜索
+" leaderf
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
+" quick edit
+" 快速注释
+Plug 'scrooloose/nerdcommenter'
 
-
+" quick run
+" quickrun
+Plug 'thinca/vim-quickrun'
 
 " text object
 " 支持自定义文本对象
@@ -772,7 +772,6 @@ if count(g:plugged_groups, 'golang')
     " }}}
 endif
 
-
 if count(g:plugged_groups, 'python')
     " for python.vim syntax highlight
     " pythonsyntax
@@ -834,7 +833,6 @@ if count(g:plugged_groups, 'javascript')
     " }}}
 endif
 
-
 if count(g:plugged_groups, 'rust')
     " rust 
     Plug 'rust-lang/rust.vim'
@@ -844,7 +842,6 @@ if count(g:plugged_groups, 'rust')
     " }}}
 endif
 
-
 if count(g:plugged_groups, 'coffeescript')
     Plug 'kchmck/vim-coffee-script'
 endif
@@ -853,14 +850,11 @@ endif
     " Plug 'Shougo/vimshell.vim'
 " endif
 
-
-
 if count(g:plugged_groups, 'less')
     " ###### vim.less : less 自动更新##########
     Plug 'groenewege/vim-less'
     " autocmd BufWritePost *.less :!lessc % > %:p:r.css
 endif
-
 
 if count(g:plugged_groups, 'protobuf')
     " protobuf
@@ -884,23 +878,25 @@ if count(g:plugged_groups, 'beta')
 
     " Plug 'ConradIrwin/vim-bracketed-paste'
     " Plug 'roxma/vim-paste-easy'
-
-
 endif
-
 
 " Add plugins to &runtimepath
 call plug#end()
 
+" ################## 以下为各插件的增强配置 #########
 
 " ################### 基础 ######################
 
-
+" 热键管理插件
+" vim-which-key {{{
+    " :h vim-which-key 
+    " @todo: custom hot-key cheatsheet
+    " Command example :WichKey 'g'
+" }}}
 
 " ################### 自动补全 ###################
 
 " gutentags {{{
-
     let $GTAGSLABEL = 'native-pygments'
     let $GTAGSCONF = '/usr/local/share/gtags/gtags.conf'
     " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
@@ -1045,7 +1041,6 @@ call plug#end()
     map <Leader><leader>. <Plug>(easymotion-repeat)
 " }}}
 
-
 " quickscope {{{
     let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
     " macvim/gvim会有问题, 暂时注解
@@ -1072,7 +1067,6 @@ call plug#end()
         \ 'ai' :0,
         \ })
     endif
-
 " }}}
 
 " #################  多列编辑 ##################
@@ -1191,7 +1185,6 @@ call plug#end()
     \}
 " }}}
 
-
 " rainbow_parentheses {{{
     " " 不加入这行, 防止黑色括号出现, 很难识别
     " " \ ['black',       'SeaGreen3'],
@@ -1239,7 +1232,6 @@ call plug#end()
 
 
 " ################### 语言相关 ###################
-
 " quickrun {{{
     let g:quickrun_config = {
     \   "_" : {
@@ -1251,7 +1243,6 @@ call plug#end()
     nmap <Leader>r <Plug>(quickrun)
     map <F10> :QuickRun<CR>
 " }}}
-
 
 
 " ####### temp #######
