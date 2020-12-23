@@ -20,7 +20,7 @@ if !exists('g:plugged_groups')
     " ycm / coc 二选一, 否则会有冲突, vim>8 or neovim 推荐使用 coc 
     " ycm --> nerdtree + tagbar + json 
     " cocnvim --> coc-explorer + vista + coc-json
-    let g:plugged_groups=['python', 'golang', 'markdown', 'tmux', 'shell', 'protobuf', 'coc', 'graphviz', 'beta']
+    let g:plugged_groups=['python', 'golang', 'markdown-preview', 'markdown-edit', 'tmux', 'shell', 'protobuf', 'coc', 'graphviz', 'beta']
 endif
 
 " ----------------------------------------------------------------------------
@@ -725,10 +725,14 @@ if count(g:plugged_groups, 'tmux')
             set term=screen-256color
         endif
     " }}}
-
 endif
 
-if count(g:plugged_groups, 'markdown')
+if count(g:plugged_groups, 'markdown-edit')
+    " see: https://github.com/plasticboy/vim-markdown
+    Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+endif
+
+if count(g:plugged_groups, 'markdown-preview')
     " If you don't have nodejs and yarn
     " use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
     " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
@@ -738,7 +742,7 @@ if count(g:plugged_groups, 'markdown')
     " If you have nodejs and yarn
     " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
-    " markdown {{{
+    " markdown-preview {{{
         " set to 1, nvim will open the preview window after entering the markdown buffer
         " default: 0
         let g:mkdp_auto_start = 0
