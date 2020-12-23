@@ -43,3 +43,5 @@ git clone https://github.com/bhilburn/powerlevel9k.git $ZSH_CUSTOM/themes/powerl
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 
+# reference
+# see: https://www.zrahh.com/archives/167.html
