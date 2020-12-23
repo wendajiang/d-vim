@@ -730,6 +730,15 @@ endif
 if count(g:plugged_groups, 'markdown-edit')
     " see: https://github.com/plasticboy/vim-markdown
     Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+
+    " vim-markdown {{{
+        let g:vim_markdown_conceal = 0
+        let g:vim_markdown_folding_level = 6
+        let g:vim_markdown_frontmatter = 1
+        let g:vim_markdown_math = 1
+        let g:tex_conceal = ""
+        let g:vim_markdown_json_frontmatter = 1
+    " }}}
 endif
 
 if count(g:plugged_groups, 'markdown-preview')
