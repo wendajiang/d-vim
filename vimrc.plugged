@@ -611,6 +611,13 @@ if count(g:plugged_groups, 'coc')
         let g:vista_finder_alternative_executives = ['coc']
 
     " }}}
+
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
+    " highlight {{{
+        let g:cpp_class_scope_highlight = 1
+        let g:cpp_member_variable_highlight = 1
+        let g:cpp_class_decl_highlight = 1
+    " }}}
 endif
 
 

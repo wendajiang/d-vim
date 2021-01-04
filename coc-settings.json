@@ -183,6 +183,7 @@
 	"todolist.promptForReminder":false,
 	"coc-actions.hideCursor": false,
 	"coc-actions.showActionKind": true,
+	"clangd.semanticHighlighting": true,
 	"diagnostic-languageserver.filetypes": {
 		"vim": "vint",
 		"email": "languagetool",
