@@ -9,12 +9,12 @@ cp ./.p10k.zsh ~/.p10k.zsh
 # 安装oh-my-zsh到 ~/.oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-brew install --cask font-fira-code-nerd-font
 
 # install autojump
 sysOS=`uname -s`
 if [ "$sysOS" = "Darwin" ];then
 	# macos
+    brew install --cask font-fira-code-nerd-font
     brew install autojump
     echo '[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh' >> ~/.zshrc
     echo 'source $ZSH/oh-my-zsh.sh' >> ~/.zshrc
