@@ -33,9 +33,14 @@ sudo apt install clangd-9
 sudo apt install node
 sudo apt install yarn
 sudo apt install ripgrep
+sudo apt install nodejs # for coc-nvim
+
+#centos 
+sudo yum install nodejs
 
 
 # mac
+brew install nodejs #for coc-nvim
 brew install yarn
 brew install ctags
 brew install the_silver_searcher # ag for ctrlsf
