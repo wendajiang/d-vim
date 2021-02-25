@@ -549,6 +549,8 @@ if count(g:plugged_groups, 'coc')
 
         autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
         
+        map <F6> :CocCommand explorer <CR>
+        
         function! AuCocExplorerAutoOpen()
             if @% == '' || @% == '.'
                 exe ':CocCommand explorer'
