@@ -20,7 +20,7 @@ if !exists('g:plugged_groups')
     " ycm / coc 二选一, 否则会有冲突, vim>8 or neovim 推荐使用 coc 
     " ycm --> nerdtree + tagbar + json 
     " cocnvim --> coc-explorer + vista + coc-json
-    let g:plugged_groups=['python', 'golang', 'markdown-preview', 'markdown-edit', 'tmux', 'shell', 'protobuf', 'coc', 'graphviz', 'beta']
+    let g:plugged_groups=['python', 'golang', 'markdown-preview', 'markdown-edit', 'tmux', 'shell', 'protobuf', 'coc', 'graphviz', 'bazel', 'beta']
 endif
 
 " ----------------------------------------------------------------------------
@@ -379,6 +379,16 @@ if count(g:plugged_groups, 'ycm')
         let g:vim_json_syntax_conceal = 0
     " }}}
 
+endif
+
+if count(g:plugged_groups, 'bazel')
+    " https://github.com/bazelbuild/vim-bazel
+    " Add maktaba and bazel to the runtimepath.
+    " (The latter must be installed before it can be used.)
+    " vim-bazel is a plugin for only invoking bazel and interacting with bazel artifacts.
+    " .bzl file syntax and filetype setting already in vim-core
+    Plug 'google/vim-maktaba'
+    Plug 'bazelbuild/vim-bazel'
 endif
 
 if count(g:plugged_groups, 'graphviz')

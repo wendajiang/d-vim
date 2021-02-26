@@ -761,8 +761,8 @@ func SetTitle()
     endif
     if &filetype == 'c'
         call append(line(".")+6, "#include<stdio.h>")
-        call append(line(".")+6, "#include<stdlib.h>")
-        call append(line(".")+7, "")
+        call append(line(".")+7, "#include<stdlib.h>")
+        call append(line(".")+8, "")
     endif
     if expand("%:e") == 'h'
         call append(line(".")+6, "#ifndef _".toupper(expand("%:r"))."_H")
