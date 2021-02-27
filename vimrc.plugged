@@ -711,12 +711,22 @@ Plug 'patstockwell/vim-monokai-tasty'
 " ctrlspace
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
-" 模糊搜索
+"" 模糊搜索
 " leaderf
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
-" quick edit
-" 快速注释
+" vim-clap 
+" The bang version will try to download the prebuilt binary if cargo does not exist.
+" Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+
+" :Clap install-binary[!] will always try to compile the binary locally,
+" if you do care about the disk used for the compilation, try using the force download way,
+" which will download the prebuilt binary even you have installed cargo.
+Plug 'liuchengxu/vim-clap', { 'do': { -> clap#installer#force_download() } }
+
+
+"" quick edit
+"" 快速注释
 Plug 'scrooloose/nerdcommenter'
 
 " quick run
@@ -1137,6 +1147,9 @@ call plug#end()
     noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
 " }}}
 
+" vim-clap {{{
+
+" }}}
 
 " ################### 快速编码 ###################
 
