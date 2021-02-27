@@ -56,9 +56,13 @@ lnif() {
 # ./configure --with-features=huge --enable-python3interp --enable-pythoninterp --with-python-config-dir=/usr/lib64/python2.7/config/ --enable-rubyinterp --with-python3-config-dir=/usr/lib64/python3.6/config-3.6m-x86_64-linux-gnu/ --enable-multibyte --enable-cscope      --prefix=/usr/local/vim/
 
 
-echo "Setp0: install tmux conf "
+echo "Step0: install tmux conf "
 lnif $CURRENT_DIR/tmux.conf $HOME/.tmux.conf
 lnif $CURRENT_DIR/tmux.conf.local $HOME/.tmux.conf.local
+
+echo "Step0: install fzf with git"
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 
 echo "Step1: backing up current vim config"

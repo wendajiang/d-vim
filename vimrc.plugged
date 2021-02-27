@@ -724,6 +724,9 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 " which will download the prebuilt binary even you have installed cargo.
 Plug 'liuchengxu/vim-clap', { 'do': { -> clap#installer#force_download() } }
 
+" fzf.vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 "" quick edit
 "" 快速注释
