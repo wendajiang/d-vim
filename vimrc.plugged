@@ -1047,7 +1047,7 @@ call plug#end()
     let $GTAGSLABEL = 'native-pygments'
     let $GTAGSCONF = '/usr/local/share/gtags/gtags.conf'
     " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
-    let g:gutentags_project_root = ['.project', '.maye', '.git']
+    let g:gutentags_project_root = ['.project', '.maye', '.git', 'BUILD', 'Makefile', 'makefile']
 
     " 同时开启 ctags 和 gtags 支持：
     let g:gutentags_modules = []
