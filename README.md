@@ -159,10 +159,9 @@ F2 set nu/nonu,行号开关，用于鼠标复制代码用
 F3 set list/nolist,显示可打印字符开关
 F4 set wrap/nowrap,换行开关
 F5 set paste/nopaste,粘贴模式paste_mode开关,用于有格式的代码粘贴
-F6 syntax on/off,语法开关，关闭语法可以加快大文件的展示
+F6 文件树的打开关闭
 
 F9 tagbar
-F10 运行当前文件(quickrun)
 
 5. 分屏移动
 
