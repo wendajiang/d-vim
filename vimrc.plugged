@@ -654,6 +654,7 @@ Plug 'unblevable/quick-scope'
 
 " gutentags
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
 
 Plug 'vim-scripts/matchit.zip'
 " signature
