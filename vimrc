@@ -437,6 +437,8 @@ function! HideNumber()
 endfunc
 nnoremap <F2> :call HideNumber()<CR>
 
+nnoremap <F10> :cclose<CR>
+
 " " F3 显示可打印字符开关
 " nnoremap <F3> :set list! list?<CR>
 
