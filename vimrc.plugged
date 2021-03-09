@@ -1163,9 +1163,14 @@ call plug#end()
 " ################### 快速编码 ###################
 
 " nerdcommenter {{{
+    " keymap reference https://github.com/preservim/nerdcommenter
     let g:NERDSpaceDelims=1
     let g:NERDAltDelims_python = 1
     let g:NERDCompactSexyComs=1
+
+    " turn off default keymap, remap
+    let g:NERDCreateDefaultMappings = 0
+    map <leader>c<space> <plug>NERDCommenterToggle
 " }}}
 
 " trailingwhitespace {{{
