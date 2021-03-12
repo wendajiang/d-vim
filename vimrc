@@ -99,8 +99,6 @@ set cursorcolumn
 " 突出显示当前行
 set cursorline
 
-" disable folding"
-set nofoldenable     
 " prompt when existing from an unsaved file  
 set confirm                                                                                                  
 
