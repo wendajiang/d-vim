@@ -1076,6 +1076,28 @@ call plug#end()
     " 禁用 gutentags 自动加载 gtags 数据库的行为
     let g:gutentags_auto_add_gtags_cscope = 0
 
+    " <leader>cs	Find symbol (reference) under cursor
+    " <leader>cg	Find symbol definition under cursor
+    " <leader>cd	Functions called by this function
+    " <leader>cc	Functions calling this function
+    " <leader>ct	Find text string under cursor
+    " <leader>ce	Find egrep pattern under cursor
+    " <leader>cf	Find file name under cursor
+    " <leader>ci	Find files #including the file name under cursor
+    " <leader>ca	Find places where current symbol is assigned
+    " <leader>cz	Find current word in ctags database
+    let g:gutentags_plus_nomap = 1
+    noremap <silent> <leader>cr :GscopeFind s <C-R><C-W><cr>
+    noremap <silent> <leader>cd :GscopeFind g <C-R><C-W><cr>
+    noremap <silent> <leader>cg :GscopeFind d <C-R><C-W><cr>
+    noremap <silent> <leader>cc :GscopeFind c <C-R><C-W><cr>
+    noremap <silent> <leader>ct :GscopeFind t <C-R><C-W><cr>
+    noremap <silent> <leader>ce :GscopeFind e <C-R><C-W><cr>
+    noremap <silent> <leader>cf :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
+    noremap <silent> <leader>ci :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
+    noremap <silent> <leader>ca :GscopeFind a <C-R><C-W><cr>
+    noremap <silent> <leader>cz :GscopeFind z <C-R><C-W><cr>
+
     " 打开强化命令
     "let g:gutentags_define_advanced_commands = 1
     " :GutentagsToggleTrace
