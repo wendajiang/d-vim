@@ -498,8 +498,8 @@ if count(g:plugged_groups, 'coc')
         " Use <TAB> for selections ranges.
         " NOTE: Requires 'textDocument/selectionRange' support from the language server.
         " coc-tsserver, coc-python are the examples of servers that support it.
-        nmap <silent> <TAB> <Plug>(coc-range-select)
-        xmap <silent> <TAB> <Plug>(coc-range-select)
+        " nmap <silent> <TAB> <Plug>(coc-range-select)
+        " xmap <silent> <TAB> <Plug>(coc-range-select)
 
         " Add `:Format` command to format current buffer.
         command! -nargs=0 Format :call CocAction('format')
@@ -931,7 +931,7 @@ if count(g:plugged_groups, 'python')
     " pip install isort
     Plug 'fisadev/vim-isort'
     " Shift-V 上下选中, ctrl + i 规范化
-    let g:vim_isort_map = '<C-i>'
+    " let g:vim_isort_map = '<C-i>'
 endif
 
 if count(g:plugged_groups, 'php')
