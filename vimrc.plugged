@@ -732,6 +732,9 @@ Plug 'junegunn/fzf.vim'
 "" 快速注释
 Plug 'scrooloose/nerdcommenter'
 
+" format
+Plug 'rhysd/vim-clang-format'
+
 " text object
 " 支持自定义文本对象
 Plug 'kana/vim-textobj-user'
@@ -1284,6 +1287,75 @@ call plug#end()
 
 " ################### 功能相关 ###################
 
+" http://startheap.com/2018/08/17/The-method-by-which-vim-configures-clang-format-under-Linux/
+" https://github.com/rhysd/vim-clang-format
+" vim-clang-format {{{
+    let g:clang_format#command = 'clang-format'
+    " nmap <F4> :ClangFormat<cr>
+    autocmd FileType c ClangFormatAutoEnable
+    let g:clang_format#detect_style_file = 0
+
+    let g:clang_format#style_options = {
+            \ "Language" : "Cpp",
+            \ "BasedOnStyle" : "Google",
+            \ "AccessModifierOffset" : -1,
+            \ "AlignAfterOpenBracket" : "true",
+            \ "AlignEscapedNewlinesLeft" : "true",
+            \ "AlignOperands" : "true",
+            \ "AlignTrailingComments" : "true",
+            \ "AllowAllParametersOfDeclarationOnNextLine" : "true",
+            \ "AllowShortBlocksOnASingleLine" : "false",
+            \ "AllowShortCaseLabelsOnASingleLine" : "false",
+            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AllowShortLoopsOnASingleLine" : "true",
+            \ "AllowShortFunctionsOnASingleLine" : "All",
+            \ "AlwaysBreakAfterDefinitionReturnType" : "false",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "AlwaysBreakBeforeMultilineStrings" : "true",
+            \ "BreakBeforeBinaryOperators" : "None",
+            \ "BreakBeforeTernaryOperators" : "true",
+            \ "BreakConstructorInitializersBeforeComma" : "false",
+            \ "BinPackParameters" : "true",
+            \ "BinPackArguments" : "true",
+            \ "ColumnLimit" : 80,
+            \ "ConstructorInitializerAllOnOneLineOrOnePerLine" : "true",
+            \ "ConstructorInitializerIndentWidth" : 4,
+            \ "DerivePointerAlignment" : "true",
+            \ "ExperimentalAutoDetectBinPacking" : "false",
+            \ "IndentCaseLabels" : "true",
+            \ "IndentWrappedFunctionNames" : "false",
+            \ "IndentFunctionDeclarationAfterType" : "false",
+            \ "MaxEmptyLinesToKeep" : 1,
+            \ "KeepEmptyLinesAtTheStartOfBlocks" : "false",
+            \ "NamespaceIndentation" : "None",
+            \ "ObjCBlockIndentWidth" : 2,
+            \ "ObjCSpaceAfterProperty" : "false",
+            \ "ObjCSpaceBeforeProtocolList" : "false",
+            \ "PenaltyBreakBeforeFirstCallParameter" : 1,
+            \ "PenaltyBreakComment" : 300,
+            \ "PenaltyBreakString" : 1000,
+            \ "PenaltyBreakFirstLessLess" : 120,
+            \ "PenaltyExcessCharacter" : 1000000,
+            \ "PenaltyReturnTypeOnItsOwnLine" : 200,
+            \ "PointerAlignment" : "Left",
+            \ "SpacesBeforeTrailingComments" : 2,
+            \ "Cpp11BracedListStyle" : "true",
+            \ "Standard" : "Auto",
+            \ "IndentWidth" : 4,
+            \ "TabWidth" : 4,
+            \ "UseTab" : "Never",
+            \ "BreakBeforeBraces" : "Attach",
+            \ "SpacesInParentheses" : "false",
+            \ "SpacesInSquareBrackets" : "false",
+            \ "SpacesInAngles" : "false",
+            \ "SpaceInEmptyParentheses" : "false",
+            \ "SpacesInCStyleCastParentheses" : "false",
+            \ "SpaceAfterCStyleCast" : "false",
+            \ "SpacesInContainerLiterals" : "true",
+            \ "SpaceBeforeAssignmentOperators" : "true",
+            \ "ContinuationIndentWidth" : 4 }
+
+" }}}
 
 " git.  git操作还是习惯命令行,vim里面处理简单diff编辑操作
 
