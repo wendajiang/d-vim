@@ -412,6 +412,7 @@ if count(g:plugged_groups, 'coc')
     " cocnvim {{{
         " 启动coc.nvim自动安装的插件
         let g:coc_global_extensions = ['coc-yaml', 'coc-json', 'coc-explorer' ]
+
         " Use tab for trigger completion with characters ahead and navigate.
         " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
         " other plugin before putting this into your config.
@@ -1035,7 +1036,15 @@ call plug#end()
 " vim-which-key {{{
     " :h vim-which-key 
     " @todo: custom hot-key cheatsheet
-    " Command example :WichKey 'g'
+    " Command example :WhichKey 'g'
+    let g:which_key_map =  {}
+    " let g:which_key_map['g'] = {
+	" 		\ 'name': '+coc.goto',
+	" 		\ 'y' : 'go to type definition',
+	" 		\ 'i' : 'go to implementation',
+	" 		\ 'r' : 'go to references',
+	" 		\ 'd' : 'go to definition',
+	" 		\ }
 " }}}
 
 " ################### 自动补全 ###################
