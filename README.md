@@ -161,8 +161,8 @@ F4 set wrap/nowrap,换行开关
 F5 set paste/nopaste,粘贴模式paste_mode开关,用于有格式的代码粘贴
 F6 文件树的打开关闭
 F8 行号显示模式切换,相对行号/绝对行号
-
-F9 tagbar
+F9 Vista!!
+F12 TagbarToggle
 
 5. 分屏移动
 
