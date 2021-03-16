@@ -761,9 +761,20 @@ func SetTitle()
         call append(line(".")+5, "")
     endif
     if expand("%:e") == 'cpp'
-        call append(line(".")+6, "#include <bits/stdc++.h>")
-        call append(line(".")+7, "using namespace std;")
-        call append(line(".")+8, "")
+        call append(line(".")+6, "// #include <bits/stdc++.h>")
+        call append(line(".")+7, "#include <iostream>")
+        call append(line(".")+8, "#include <vector>")
+        call append(line(".")+9, "#include <string>")
+        call append(line(".")+10, "#include <map>")
+        call append(line(".")+11, "#include <set>")
+        call append(line(".")+12, "#include <list>")
+        call append(line(".")+13, "#include <algorithm>")
+        call append(line(".")+14, "#include <unordered_set>")
+        call append(line(".")+15, "#include <unordered_map>")
+        call append(line(".")+16, "#include <queue>")
+        call append(line(".")+17, "#include <deque>")
+        call append(line(".")+18, "using namespace std;")
+        call append(line(".")+19, "")
     endif
     if &filetype == 'c'
         call append(line(".")+6, "#include<stdio.h>")
