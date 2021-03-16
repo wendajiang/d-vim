@@ -680,8 +680,8 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 " git
 " fugitive
 Plug 'tpope/vim-fugitive'
-" gitgutter
-Plug 'airblade/vim-gitgutter'
+" git-blame
+Plug 'zivyangll/git-blame.vim'
 
 " gundo
 " edit history, 可以查看回到某个历史状态
@@ -1371,13 +1371,8 @@ call plug#end()
     " <leader>gp maps to :Git push<CR>
 " }}}
 
-" gitgutter {{{
-    " 同git diff,实时展示文件中修改的行
-    " 只是不喜欢除了行号多一列, 默认关闭,gs时打开
-    let g:gitgutter_map_keys = 0
-    let g:gitgutter_enabled = 0
-    let g:gitgutter_highlight_lines = 1
-    nnoremap <leader>gs :GitGutterToggle<CR>
+" git-blame {{{
+    nnoremap <Leader>gs :<C-u>call gitblame#echo()<CR>
 " }}}
 
 " gundo {{{
