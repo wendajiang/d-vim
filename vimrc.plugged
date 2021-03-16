@@ -1400,7 +1400,7 @@ call plug#end()
     let g:airline_left_seq = '' " '\uE0B0'
     let g:airline_left_alt_sep = '' " '\uE0B1'
     let g:airline_right_sep = ''  " '\uE0B2'
-    let g:airline_right_alt_sep = ''  " æ\uE0B3'
+    let g:airline_right_alt_sep = ''  " \uE0B3'
     let g:airline_symbols.linenr = '¶'
     let g:airline_symbols.branch = '⎇'
     let g:airline_symbols.whitespace = 'Ξ'
@@ -1413,6 +1413,8 @@ call plug#end()
     let g:airline#extensions#tabline#fnametruncate = 16
     let g:airline#extensions#tabline#fnamecollapse = 2
     let g:airline#extensions#tabline#buffer_idx_mode = 1
+    " disanbled whitespace check
+    let g:airline#extensions#whitespace#enabled = 0
     set completeopt-=preview
 
     " set airline-theme
