@@ -17,5 +17,6 @@ lnif $CURRENT_DIR/tmux/.tmux.conf.local $HOME/.tmux.conf.local
 cd tmux
 git checkout master
 cd ../
+mkdir -p $HOME/.tmux
 echo "install tmux conf complete"
 

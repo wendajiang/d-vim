@@ -63,6 +63,7 @@ lnif $CURRENT_DIR/tmux/.tmux.conf.local $HOME/.tmux.conf.local
 cd tmux 
 git checkout master
 cd ../
+mkdir -p $HOME/.tmux
 
 echo "Step0.2: install fzf with git"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
