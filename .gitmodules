@@ -1,5 +1,5 @@
 [submodule "tmux"]
 	path = tmux
-	url = https://github.com/gpakosz/.tmux
+	url = https://github.com/wendajiang/.tmux.git
     branch = master
     ignore = dirty

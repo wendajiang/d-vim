@@ -56,11 +56,15 @@ lnif() {
 # ./configure --with-features=huge --enable-python3interp --enable-pythoninterp --with-python-config-dir=/usr/lib64/python2.7/config/ --enable-rubyinterp --with-python3-config-dir=/usr/lib64/python3.6/config-3.6m-x86_64-linux-gnu/ --enable-multibyte --enable-cscope      --prefix=/usr/local/vim/
 
 
-echo "Step0: install tmux conf "
-lnif $CURRENT_DIR/tmux.conf $HOME/.tmux.conf
-lnif $CURRENT_DIR/tmux.conf.local $HOME/.tmux.conf.local
+echo "Step0.1: install tmux conf "
+git submodule update --init
+lnif $CURRENT_DIR/tmux/.tmux.conf $HOME/.tmux.conf
+lnif $CURRENT_DIR/tmux/.tmux.conf.local $HOME/.tmux.conf.local
+cd tmux 
+git checkout master
+cd ../
 
-echo "Step0: install fzf with git"
+echo "Step0.2: install fzf with git"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
