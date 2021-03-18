@@ -351,7 +351,8 @@ if count(g:plugged_groups, 'coc')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " cocnvim {{{
         " 启动coc.nvim自动安装的插件
-        let g:coc_global_extensions = ['coc-yaml', 'coc-json', 'coc-explorer' ]
+        " coc-clang-format-style-options 辅助写 .clang-format
+        let g:coc_global_extensions = ['coc-yaml', 'coc-json', 'coc-explorer', 'coc-clang-format-style-options' ]
 
         " Use tab for trigger completion with characters ahead and navigate.
         " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
