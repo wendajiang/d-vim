@@ -183,7 +183,20 @@
 	"todolist.promptForReminder":false,
 	"coc-actions.hideCursor": false,
 	"coc-actions.showActionKind": true,
+	"clangd.enabled": true,
+	"clangd.arguments": [
+		"-compile-commands-dir=/Users/david/d-vim/"
+	],
+	"clangd.checkUpdates": false,
+	"clangd.disableCompletion": false,
+	"clangd.disableDiagnostics": false,
+	"clangd.disableSnippetCompletion": false,
+	"clangd.compilationDatabasePath": "",
+	"clangd.fallbackFlags": [
+		
+	],
 	"clangd.semanticHighlighting": true,
+	"clangd.serverCompletionRanking": true,
 	"diagnostic-languageserver.filetypes": {
 		"vim": "vint",
 		"email": "languagetool",
@@ -220,11 +233,6 @@
 			"args": ["start"],
 			"filetypes": ["sh"],
 			"ignoredRootPaths": []
-        },
-        "clangd": {
-          "command": "clangd",
-          "rootPatterns": ["~/d-vim/compile_flags.txt", "compile_commands.json"],
-          "filetypes": ["c", "cpp", "objc", "objcpp"]
         },
         "rust": {
             "command": "rust-analyzer",
