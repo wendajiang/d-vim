@@ -1068,6 +1068,8 @@ call plug#end()
        let g:gutentags_modules += ['gtags_cscope']
     endif
 
+    set statusline+=%{gutentags#statusline()}
+
     " 所生成的数据文件的名称 "
     let g:gutentags_ctags_tagfile = '.tags'
 
