@@ -1112,7 +1112,7 @@ call plug#end()
     noremap <silent> <leader>cz :GscopeFind z <C-R><C-W><cr>
 
     " 打开强化命令
-    "let g:gutentags_define_advanced_commands = 1
+    let g:gutentags_define_advanced_commands = 1
     " :GutentagsToggleTrace
     " :GutentagsUpdate
     " :messages  来查看信息
