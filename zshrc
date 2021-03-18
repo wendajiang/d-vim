@@ -216,5 +216,7 @@ export tbb_path=/usr/local/Cellar/tbb/2020_U1/
 export PATH="/usr/local/Cellar/llvm/10.0.0_3/bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
+export EDITOR=vim
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

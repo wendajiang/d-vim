@@ -1,10 +1,16 @@
 #!/bin/bash
 # sh -x installzsh.sh
+lnif() {
+    if [ -e "$1" ]; then
+        ln -sf "$1" "$2"
+    fi
+}
+
 
 # cp zshrc to ~/.zshrc
 mv ~/.zshrc ~/.zshrc.bak
-cp ./zshrc ~/.zshrc
-cp ./.p10k.zsh ~/.p10k.zsh
+lnif ./zshrc ~/.zshrc
+lnif ./.p10k.zsh ~/.p10k.zsh
 
 # 安装oh-my-zsh到 ~/.oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
