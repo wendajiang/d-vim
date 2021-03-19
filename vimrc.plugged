@@ -656,6 +656,7 @@ Plug 'unblevable/quick-scope'
 " gutentags
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
+Plug 'skywind3000/vim-preview'
 
 Plug 'vim-scripts/matchit.zip'
 " signature
@@ -1118,6 +1119,10 @@ call plug#end()
     " :GutentagsToggleTrace
     " :GutentagsUpdate
     " :messages  来查看信息
+    
+    " https://github.com/skywind3000/vim-preview
+    autocmd FileType qf nnoremap <silent><buffer> p :PreviewQuickfix<cr>
+    autocmd FileType qf nnoremap <silent><buffer> P :PreviewClose<cr>
 " }}}
 
 " ultisnips {{{
