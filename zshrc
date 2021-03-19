@@ -220,6 +220,8 @@ export EDITOR=vim
 alias vf='vim $(fzf)'
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build} --type f"
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
+export GTAGSCONF='/usr/local/share/gtags/gtags.conf'
+export GTAGSLABEL='native-pygments'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
