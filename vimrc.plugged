@@ -654,6 +654,7 @@ Plug 'unblevable/quick-scope'
 " gutentags
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
+Plug 'skywind3000/vim-preview'
 
 Plug 'vim-scripts/matchit.zip'
 " signature
@@ -1086,8 +1087,8 @@ call plug#end()
     let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
     let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
-    " 禁用 gutentags 自动加载 gtags 数据库的行为
-    let g:gutentags_auto_add_gtags_cscope = 0
+    " gutentags 自动加载 gtags 数据库的行为
+    let g:gutentags_auto_add_gtags_cscope = 1
 
     " <leader>cs	Find symbol (reference) under cursor
     " <leader>cg	Find symbol definition under cursor
@@ -1116,6 +1117,10 @@ call plug#end()
     " :GutentagsToggleTrace
     " :GutentagsUpdate
     " :messages  来查看信息
+    
+    " https://github.com/skywind3000/vim-preview
+    autocmd FileType qf nnoremap <silent><buffer> p :PreviewQuickfix<cr>
+    autocmd FileType qf nnoremap <silent><buffer> P :PreviewClose<cr>
 " }}}
 
 " ultisnips {{{
