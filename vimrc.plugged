@@ -119,13 +119,11 @@ else
         \   'python': ['flake8'],
         \   'javascript': ['eslint'],
         \   'json': ['fixjson'],
-        \   'cpp': ['cppcheck','clang'],
         \}
 
         let g:ale_fixers = {
         \   'python': ['yapf'],
         \   'json': ['fixjson'],
-        \   'cpp': ['clang-format'],
         \   'scala': ['scalafmt'],
         \}
 
@@ -734,7 +732,7 @@ Plug 'junegunn/fzf.vim'
 "" 快速注释
 Plug 'scrooloose/nerdcommenter'
 
-" format
+" vim-clang-format
 Plug 'rhysd/vim-clang-format'
 
 " text object
@@ -1296,7 +1294,7 @@ call plug#end()
 " vim-clang-format {{{
     let g:clang_format#command = 'clang-format'
     " nmap <F4> :ClangFormat<cr>
-    autocmd FileType c ClangFormatAutoEnable
+    " autocmd FileType c ClangFormatAutoEnable
     let g:clang_format#detect_style_file = 0
 
     let g:clang_format#style_options = {
@@ -1332,7 +1330,7 @@ call plug#end()
             \ "MaxEmptyLinesToKeep" : 1,
             \ "KeepEmptyLinesAtTheStartOfBlocks" : "false",
             \ "NamespaceIndentation" : "None",
-            \ "ObjCBlockIndentWidth" : 2,
+            \ "ObjCBlockIndentWidth" : 4,
             \ "ObjCSpaceAfterProperty" : "false",
             \ "ObjCSpaceBeforeProtocolList" : "false",
             \ "PenaltyBreakBeforeFirstCallParameter" : 1,
