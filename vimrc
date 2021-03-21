@@ -687,7 +687,7 @@ au BufWinEnter *.php set mps-=<:>
 
 
 
-" 保存python文件时删除多余空格
+" 保存文件时删除多余空格
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
