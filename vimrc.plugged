@@ -714,7 +714,7 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 
 "" 模糊搜索
 " leaderf
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 " vim-clap 
 " The bang version will try to download the prebuilt binary if cargo does not exist.
@@ -1181,7 +1181,7 @@ call plug#end()
     " Show icons, icons are shown by default
     let g:Lf_ShowDevIcons = 1
     " For GUI vim, the icon font can be specify like this, for example
-    let g:Lf_DevIconsFont = "DejaVuSansMono Nerd Font Mono"
+    " let g:Lf_DevIconsFont = "DejaVuSansMono Nerd Font Mono"
 
     " should use `Leaderf gtags --update` first
     let g:Lf_GtagsAutoGenerate = 0
