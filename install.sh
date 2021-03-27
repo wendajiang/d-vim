@@ -69,6 +69,26 @@ echo "Step0.2: install fzf with git"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+echo "Step0.3: install universal ctags"
+sysOS=`uname -s`
+if [ "$sysOS" = "Darwin" ];
+then
+    brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+elif [ "$sysOS" = "Linux" ];
+then
+    mkdir -p ./tmp
+    cd tmp
+    git clone https://github.com/universal-ctags/ctags
+    cd ctags
+    ./autogen.sh
+    ./configure & make 
+    sudo make install 
+    cd ../../
+    rm -rf tmp
+    echo "@finish install universal-ctags from source"
+else
+    echo "Other OS: $sysOS"
+fi
 
 echo "Step1: backing up current vim config"
 today=`date +%Y%m%d`
