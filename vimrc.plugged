@@ -651,6 +651,9 @@ Plug 'Lokaltog/vim-easymotion'
 " quickscope
 Plug 'unblevable/quick-scope'
 
+" highlight selected word
+Plug 'lfv89/vim-interestingwords'
+
 " gutentags
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
@@ -1251,6 +1254,20 @@ call plug#end()
     " let g:qs_first_occurrence_highlight_color = 155       " terminal vim
     " let g:qs_second_occurrence_highlight_color = '#5fffff'  " gui vim
     " let g:qs_second_occurrence_highlight_color = 81         " terminal vim
+" }}}
+
+" #################  高亮选中单词 ##############
+" vim-interestingwords {{{
+    let g:interestingWordsDefaultMappings = 0
+    nnoremap <silent> <leader>k :call InterestingWords('n')<cr>
+    vnoremap <silent> <leader>k :call InterestingWords('v')<cr>
+    nnoremap <silent> <leader>K :call UncolorAllWords()<cr>
+
+    nnoremap <silent> <leader>n :call WordNavigation(1)<cr>
+    nnoremap <silent> <leader>N :call WordNavigation(0)<cr>
+
+    let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
+    let g:interestingWordsRandomiseColors = 1
 " }}}
 
 " ################### 快速选中 ###################
