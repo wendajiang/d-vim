@@ -676,7 +676,7 @@ Plug 'terryma/vim-expand-region'
 
 " 多光标选中编辑
 " visualmulti
-Plug 'mg979/vim-visual-multi'
+Plug 'mg979/vim-visual-multi', { 'branch': 'master' }
 
 " On-demand lazy load
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
@@ -1298,16 +1298,16 @@ call plug#end()
     let g:VM_maps['Find Subword Under'] = '<C-n>'           " replace visual C-n
     let g:VM_maps["Select l"]           = '<S-Right>'       " start selecting left
     let g:VM_maps["Select h"]           = '<S-Left>'        " start selecting right
-    let g:VM_maps["Select Cursor Down"] = '<M-C-j>'      " start selecting down
-    let g:VM_maps["Select Cursor Up"]   = '<M-C-k>'        " start selecting up
+    let g:VM_maps["Select Cursor Down"] = '<C-Down>'      " start selecting down
+    let g:VM_maps["Select Cursor Up"]   = '<C-Up>'        " start selecting up
     let g:VM_maps["Add Cursor Down"]    = '<S-Down>'
     let g:VM_maps["Add Cursor Up"]      = '<S-Up>'
 
     let g:VM_mouse_mappings = 1
-    nmap   <D-LeftMouse>         <Plug>(VM-Mouse-Cursor)
-    nmap   <D-RightMouse>        <Plug>(VM-Mouse-Word)
-    nmap   <M-D-RightMouse>      <Plug>(VM-Mouse-Column)
-" }}}
+    nmap   <C-LeftMouse>         <Plug>(VM-Mouse-Cursor)
+    nmap   <C-RightMouse>        <Plug>(VM-Mouse-Word)
+    nmap   <M-C-RightMouse>      <Plug>(VM-Mouse-Column)
+" }}}    
 
 " ################### 功能相关 ###################
 
