@@ -394,8 +394,8 @@ if count(g:plugged_groups, 'coc')
         nmap <leader>rn <Plug>(coc-rename)
 
         " Formatting selected code.
-        xmap <leader>f  <Plug>(coc-format-selected)
-        nmap <leader>f  <Plug>(coc-format-selected)
+        xmap <leader>fo  <Plug>(coc-format-selected)
+        nmap <leader>fo  <Plug>(coc-format-selected)
 
         augroup mygroup
           autocmd!
@@ -1184,7 +1184,7 @@ call plug#end()
 " }}}
 
 " vim-clap {{{
-    " noremap <C-F> :<C-U><C-R>=printf("Clap grep"))<CR><CR>
+    noremap <leader>f :Clap grep <CR>
 " }}}
 
 " fzf.vim {{{
