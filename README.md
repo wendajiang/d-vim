@@ -50,6 +50,9 @@ brew install yarn # install coc.nvim
 brew install ripgrep  # leaderf rg 强烈推荐, 可以替代ctrlsf
 brew install rust-analyzer # vs rls 更好用,需要单独安装,rustup component add 没有
 # brew install fzf # fzf 模糊搜索
+brew install shellcheck
+
+npm i -g bash-language-server
 ```
 
 ##### 2.2 使用Python
