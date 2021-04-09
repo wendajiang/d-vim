@@ -69,11 +69,20 @@ echo "Step0.2: install fzf with git"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
-echo "Step0.3: install universal ctags"
+echo "Step0.3: install universal ctags and binary"
 sysOS=`uname -s`
 if [ "$sysOS" = "Darwin" ];
 then
     brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+
+    brew install shellcheck
+    brew install nodejs
+    brew install global 
+    brew install ripgrep 
+    brew install find-fd 
+    brew install rust-analyzer 
+    brew install yarn 
+    brew install llvm
 elif [ "$sysOS" = "Linux" ];
 then
     mkdir -p ./tmp

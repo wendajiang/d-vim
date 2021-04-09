@@ -42,7 +42,7 @@ sudo yum install nodejs
 # mac
 brew install nodejs #for coc-nvim
 brew install yarn
-brew install ctags
+brew install universal-ctags
 brew install the_silver_searcher # ag for ctrlsf
 brew install global # for gtags
 brew install llvm  # for coc-clangd
