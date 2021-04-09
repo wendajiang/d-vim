@@ -520,8 +520,12 @@ inoremap <C-e> <End>
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 " 进入搜索Use sane regexes"
-nnoremap / /\v
-vnoremap / /\v
+" \v指定very magic：所有ASCII字符中（即键盘上能看到的字符），除了数字（0-9）、大小写字母（A-Za-z）和下划线（_）外，全都有特殊含义。
+" \V指定very nomagic：大多数字符都表示其本身，除了反斜杠\，以及用来表示模式起止的分隔符（如/或?）
+" \m指定magic：^ $ . * ~ []等具有特殊含义。当然，反斜杠和表达模式起止的分隔符也算具有特殊含义
+" \M指定nomagic：仅 ^ $具有特殊含义。当然，反斜杠和表达模式起止的分隔符也算具有特殊含义
+nnoremap / /\V
+vnoremap / /\V
 
 " Keep search pattern at the center of the screen.
 nnoremap <silent> n nzz
