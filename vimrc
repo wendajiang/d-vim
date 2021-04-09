@@ -609,8 +609,6 @@ map Y y$
 
 " 复制选中区到系统剪切板中
 vnoremap <leader>y "+y
-" 快速选中一个单词
-nnoremap <leader>c viw
 " 不加上,选中就会
 set clipboard-=autoselect
 " share system clipboard    
