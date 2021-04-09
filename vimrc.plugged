@@ -174,20 +174,6 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " 自动补全括号
 Plug 'jiangmiao/auto-pairs'
 
-" 内容搜索
-Plug 'dyng/ctrlsf.vim'
-" ctrlsf {{{
-    let g:ctrlsf_populate_qflist = 1
-    if v:version > 800
-        let g:ctrlsf_search_mode = 'async'
-    endif 
-    let g:ctrlsf_position = 'left'
-    let g:ctrlsf_winsize = '30%'
-    let g:ctrlsf_ackprg = 'ag'
-
-    " noremap <C-F> :<C-U><C-R>=printf("CtrlSF %s ", expand("<cword>"))<CR>
-" }}}
-
 if count(g:plugged_groups, 'ycm')
     " auto complete
     " 代码自动补全
@@ -1202,7 +1188,7 @@ call plug#end()
 " }}}
 
 " fzf.vim {{{
-    noremap <C-P> :<C-U><C-R>=printf("FZF")<CR><CR>
+    noremap <C-P> :FZF <CR>
 " }}}
 
 " ################### 快速编码 ###################
@@ -1510,6 +1496,7 @@ call plug#end()
 " Vim Workspace Controller
 " ctrlspace {{{
     let g:airline_exclude_preview = 1
+    noremap <leader>p :CtrlSpace <CR>
     hi CtrlSpaceSelected guifg=#586e75 guibg=#eee8d5 guisp=#839496 gui=reverse,bold ctermfg=10 ctermbg=7 cterm=reverse,bold
     hi CtrlSpaceNormal   guifg=#839496 guibg=#021B25 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=NONE
     hi CtrlSpaceSearch   guifg=#cb4b16 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
