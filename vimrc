@@ -607,6 +607,10 @@ vnoremap > >gv
 " y$ -> Y Make Y behave like other capitals
 map Y y$
 
+" terminal 模式关闭terminal
+" :help Terminal-mode
+tnoremap <ESC> <C-w>:q!<CR>
+
 " 复制选中区到系统剪切板中
 vnoremap <leader>y "+y
 " 不加上,选中就会
