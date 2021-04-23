@@ -338,6 +338,7 @@ if count(g:plugged_groups, 'coc')
         " coc-clang-format-style-options 辅助写 .clang-format
         " coc-clangd clangd的前端, 方便配置
         let g:coc_global_extensions = ['coc-yaml', 'coc-json', 'coc-explorer', 'coc-clang-format-style-options', 'coc-clangd' ]
+        let g:coc_config_home = "$HOME/.vim/"
 
         " Use tab for trigger completion with characters ahead and navigate.
         " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
