@@ -744,7 +744,7 @@ if count(g:plugged_groups, 'tmux')
     " tmux {{{
         " for tmux
         if exists('$TMUX')
-            set term=screen-256color
+            " set term=xterm-256color
         endif
     " }}}
 endif
