@@ -609,7 +609,7 @@ map Y y$
 
 " terminal 模式关闭terminal
 " :help Terminal-mode
-tnoremap <ESC> <C-w>:q!<CR>
+tnoremap <leader><ESC> <C-w>:q!<CR>
 
 " 复制选中区到系统剪切板中
 vnoremap <leader>y "+y
