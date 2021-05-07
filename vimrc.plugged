@@ -174,6 +174,9 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " 自动补全括号
 Plug 'jiangmiao/auto-pairs'
 
+" beancount 
+Plug 'nathangrigg/vim-beancount'
+
 if count(g:plugged_groups, 'ycm')
     " auto complete
     " 代码自动补全
