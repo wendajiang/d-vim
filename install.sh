@@ -131,3 +131,5 @@ else
 fi
 export SHELL=$system_shell
 
+echo "install finished ^_^"
+
