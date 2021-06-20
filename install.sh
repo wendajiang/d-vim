@@ -79,7 +79,7 @@ then
     brew install nodejs
     brew install global 
     brew install ripgrep 
-    brew install find-fd 
+    brew install fd 
     brew install rust-analyzer 
     brew install yarn 
     brew install llvm
