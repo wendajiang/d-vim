@@ -610,6 +610,12 @@ map Y y$
 " terminal 模式关闭terminal
 " :help Terminal-mode
 tnoremap <leader><ESC> <C-w>:q!<CR>
+" terminal window size 
+" :help termwinsize
+set termwinsize=20*0
+
+" window below
+set splitbelow
 
 " 复制选中区到系统剪切板中
 vnoremap <leader>y "+y
