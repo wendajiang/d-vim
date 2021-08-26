@@ -79,7 +79,7 @@ then
     brew install nodejs
     brew install global 
     brew install ripgrep 
-    brew install find-fd 
+    brew install fd 
     brew install rust-analyzer 
     brew install yarn 
     brew install llvm
@@ -130,4 +130,6 @@ else
     nvim -u $HOME/.vimrc.plugged +PlugInstall! +PlugClean! +qall
 fi
 export SHELL=$system_shell
+
+echo "install finished ^_^"
 
