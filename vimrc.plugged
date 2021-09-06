@@ -681,6 +681,7 @@ Plug 'zivyangll/git-blame.vim'
 " edit history, 可以查看回到某个历史状态
 Plug 'sjl/gundo.vim'
 
+
 " view
 " 状态栏增强展示
 " airline 
@@ -763,7 +764,11 @@ if count(g:plugged_groups, 'markdown-edit')
         let g:vim_markdown_math = 1
         let g:tex_conceal = ""
         let g:vim_markdown_json_frontmatter = 1
+        let g:vim_markdown_toc_autofit = 1
     " }}}
+    
+    " https://github.com/mzlogin/vim-markdown-toc
+    " Plug 'mzlogin/vim-markdown-toc'
 endif
 
 if count(g:plugged_groups, 'markdown-preview')
