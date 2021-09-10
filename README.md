@@ -16,8 +16,8 @@ d-vim(包含tmux配置)
 git clone https://github.com/wendajiang/d-plug
 ```
 
-
-~~ ### 2. 安装依赖包
+<del>
+### 2. 安装依赖包
 
 
 ##### 2.1 系统依赖 # ctags, gtags, ag(the_silver_searcher)
@@ -60,7 +60,7 @@ npm i -g bash-language-server
 ```
 sudo pip install flake8 yapf
 ```
-~~
+</del>
 
 
 ### 2. 安装
