@@ -17,7 +17,7 @@ git clone https://github.com/wendajiang/d-plug
 ```
 
 
-### 2. 安装依赖包
+~~ ### 2. 安装依赖包
 
 
 ##### 2.1 系统依赖 # ctags, gtags, ag(the_silver_searcher)
@@ -60,10 +60,10 @@ npm i -g bash-language-server
 ```
 sudo pip install flake8 yapf
 ```
+~~
 
 
-
-### 3. 安装
+### 2. 安装
 
 ```
 进入目录, 执行安装
