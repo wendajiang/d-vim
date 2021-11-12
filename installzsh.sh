@@ -1,20 +1,18 @@
 #!/bin/bash
 # sh -x installzsh.sh
-lnif() {
-    if [ -e "$1" ]; then
-        ln -sf "$1" "$2"
-    fi
-}
-
-
-# cp zshrc to ~/.zshrc
-mv ~/.zshrc ~/.zshrc.bak
-lnif ./zshrc ~/.zshrc
-lnif ./.p10k.zsh ~/.p10k.zsh
+# lnif() {
+#     if [ -e "$1" ]; then
+#         ln -sf "$1" "$2"
+#     fi
+# }
 
 # 安装oh-my-zsh到 ~/.oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# cp zshrc to ~/.zshrc
+mv ~/.zshrc ~/.zshrc.bak
+ln -sf ~/d-vim/zshrc ~/.zshrc
+ln -sf ~/d-vim/.p10k.zsh ~/.p10k.zsh
 
 # install autojump
 sysOS=`uname -s`
@@ -37,7 +35,6 @@ fi
 ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 # install zsh-autosuggestion
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
 
 # install zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting

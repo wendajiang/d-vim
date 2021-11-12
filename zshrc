@@ -202,6 +202,10 @@ export PATH="/usr/local/depot_tools:$PATH"
 #unset __conda_setup
 ## <<< conda initialize <<<
 
+# macos m1 path
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt:$PATH"
+
 export PATH="/usr/local/sbin:$PATH"
 export NODE_PATH='/usr/local/lib/node_modules'
 
@@ -212,9 +216,10 @@ export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig"
 alias typora="open -a typora"
 alias mweb="open -a mweb"
 alias py2="source ~/pytools/py2/bin/activate"
+alias python="python3"
 export PATH="/usr/local/bin/:$PATH"
 export tbb_path=/usr/local/Cellar/tbb/2020_U1/
-export PATH="/usr/local/Cellar/llvm/10.0.0_3/bin:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 export EDITOR=vim
