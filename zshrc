@@ -126,7 +126,9 @@ export GOPATH=$HOME/go
 # 启用 Go Modules 功能
 export GO111MODULE=on
 # 配置 GOPROXY 环境变量
-# export GOPROXY=https://goproxy.io
+export GOPROXY=https://goproxy.io,direct
+# 还可以设置不走 proxy 的私有仓库或组，多个用逗号相隔（可选）
+# export GOPRIVATE=git.mycompany.com,github.com/my/private
 
 export PATH="/usr/local/go:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
