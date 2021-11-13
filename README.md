@@ -13,7 +13,7 @@ d-vim(包含tmux配置)
 ### 1. clone 到本地
 
 ```
-git clone https://github.com/wendajiang/d-plug
+git clone https://github.com/wendajiang/d-vim
 ```
 
 <del>
