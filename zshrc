@@ -121,7 +121,6 @@ export LANG=zh_CN.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #export LDFLAGS="-L/usr/local/opt/ruby/lib"
 #export CPPFLAGS="-I/usr/local/opt/ruby/include"
-export PATH="/usr/local/opt/openssl/bin:$PATH"
 export GOPATH=$HOME/go
 # 启用 Go Modules 功能
 export GO111MODULE=on
@@ -213,8 +212,24 @@ export NODE_PATH='/usr/local/lib/node_modules'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PKG_CONFIG_PATH="/usr/local/Cellar/openssl@1.1/1.1.1d/lib/pkgconfig"
+# openssl path m1
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib:$LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include:$CPPFLAGS"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
 
+# mysql-client path m1
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib:$LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include/mysql:$CPPFLAGS"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# java path m1
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+
+alias ls="lsd"
 alias typora="open -a typora"
 alias mweb="open -a mweb"
 alias py2="source ~/pytools/py2/bin/activate"
