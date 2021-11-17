@@ -1,6 +1,6 @@
 clang
 -std=c++11
--isystem/usr/local/include
+-isystem/opt/homebrew/opt/gcc/include
 #-I/usr/local/include/c++/10.2.0
 #-I/usr/local/include/c++/10.2.0/x86_64-apple-darwin19
 -I.
