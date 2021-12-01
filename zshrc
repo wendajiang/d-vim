@@ -184,9 +184,6 @@ export PATH="/usr/local/opt/protobuf@3.7/bin:$PATH"
 
 
 export PATH="$PATH:$HOME/.ft"
-# add make path
-export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-export PATH="/usr/local/depot_tools:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -228,6 +225,8 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig:$PKG_CONFIG
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 
+# gnubin make path
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 alias ls="lsd"
 alias typora="open -a typora"
@@ -236,8 +235,6 @@ alias py2="source ~/pytools/py2/bin/activate"
 alias python="python3"
 export PATH="/usr/local/bin/:$PATH"
 export tbb_path=/usr/local/Cellar/tbb/2020_U1/
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 export EDITOR=vim
 alias vf='vim $(fzf)'
@@ -245,6 +242,9 @@ export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_mo
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
 export GTAGSCONF='/usr/local/share/gtags/gtags.conf'
 export GTAGSLABEL='native-pygments'
+
+# export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+# export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
