@@ -431,7 +431,7 @@ function! Toggle_transparent()
         let t:is_transparent = 1
     else
         set background=dark
-        let t:is_tranparent = 0
+        let t:is_transparent = 0
     endif
 endfunction
 nnoremap <F1> : call Toggle_transparent()<CR>
