@@ -18,7 +18,8 @@ ln -sf ~/d-vim/.p10k.zsh ~/.p10k.zsh
 sysOS=`uname -s`
 if [ "$sysOS" = "Darwin" ];then
 	# macos
-    brew install --cask font-fira-code-nerd-font
+    brew tap homebrew/cask-fonts
+    brew install --cask font-hack-nerd-font
     brew install autojump
     echo '[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh' >> ~/.zshrc
     echo 'source $ZSH/oh-my-zsh.sh' >> ~/.zshrc
