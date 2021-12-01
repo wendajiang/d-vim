@@ -45,6 +45,7 @@ autocmd InsertEnter * se cul    " 用浅色高亮当前行
 " install plugged
 source ~/.vimrc.plugged
 
+set rtp+=/opt/homebrew/opt/fzf
 
 " ensure ftdetect et al work by including this after the bundle stuff
 filetype plugin indent on
