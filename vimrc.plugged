@@ -177,11 +177,6 @@ Plug 'jiangmiao/auto-pairs'
 " beancount 
 Plug 'nathangrigg/vim-beancount'
 
-if count(g:plugged_groups, 'rust')
-    " https://github.com/rust-lang/rust.vim
-    Plug 'rust-lang/rust.vim'
-endif
-
 if count(g:plugged_groups, 'ycm')
     " auto complete
     " 代码自动补全
@@ -984,7 +979,7 @@ if count(g:plugged_groups, 'javascript')
 endif
 
 if count(g:plugged_groups, 'rust')
-    " rust 
+    " https://github.com/rust-lang/rust.vim
     Plug 'rust-lang/rust.vim'
 
     " rust {{{
