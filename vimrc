@@ -435,11 +435,11 @@ function! Toggle_transparent()
         let t:is_transparent = 0
     endif
 endfunction
-nnoremap <F1> : call Toggle_transparent()<CR>
+nnoremap <F5> : call Toggle_transparent()<CR>
 
 " F1 废弃这个键,防止调出系统帮助
 " I can type :help on my own, thanks.  Protect your fat fingers from the evils of <F1>
-" noremap <F1> <Esc>"
+noremap <F1> <Esc>"
 
 " F2 行号开关，用于鼠标复制代码用
 " 为方便复制，用<F2>开启/关闭行号显示:
