@@ -498,7 +498,8 @@ if count(g:plugged_groups, 'coc')
             endif
         endfunction
         
-        autocmd User CocNvimInit call AuCocExplorerAutoOpen()
+        " if want to open explore when no buf, disable the annotation
+        " autocmd User CocNvimInit call AuCocExplorerAutoOpen()
 
         " Use preset argument to open it
         " nmap <space>ed :CocCommand explorer --preset .vim<CR>
