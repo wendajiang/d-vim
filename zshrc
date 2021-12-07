@@ -109,7 +109,7 @@ export LANG=zh_CN.UTF-8
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch arm64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -213,17 +213,30 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib:$LDFLAGS"
 export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include:$CPPFLAGS"
+export CFLAGS="-I/opt/homebrew/opt/openssl@3/include:$CFLAGS"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # mysql-client path m1
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib:$LDFLAGS"
 export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include/mysql:$CPPFLAGS"
+export CFLAGS="-I/opt/homebrew/opt/mysql-client/include/mysql:$CFLAGS"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# icu4c pkg-config
+export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# harfbuzz path m1 
+# export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/harfbuzz/lib:$LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/opt/harfbuzz/include:$CPPFLAGS"
+export CFLAGS="-I/opt/homebrew/opt/harfbuzz/include:$CFLAGS"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/harfbuzz/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 # java path m1
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include:$CPPFLAGS"
+export CFLAGS="-I/opt/homebrew/opt/openjdk/include:$CFLAGS"
 
 # gnubin make path
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
