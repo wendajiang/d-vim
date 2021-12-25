@@ -256,5 +256,6 @@ export GTAGSLABEL='native-pygments'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source /Users/david/.config/broot/launcher/bash/br
+[[ ! -f /Users/david/.config/broot/launcher/bash/br ]] || source /Users/david/.config/broot/launcher/bash/br
+
 eval "$(starship init zsh)"
