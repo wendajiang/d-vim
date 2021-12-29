@@ -18,10 +18,10 @@
 
 #  <type>[<option scope>]: <short summary>
 #     │      │             │
-#     │      │             └─> Summary in present tense. Not capitalized. No period at the end. 
+#     │      │             └─> Summary in present tense. Not capitalized. No period at the end.
 #     │      │
 #     │      └─> Scope (optional): eg. common, compiler, authentication, core
-#     │                                                                                          
+#     │
 #     └─> Type: chore, docs, feat, fix, refactor, style, or test.
 #
 #  [optional body]
