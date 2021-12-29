@@ -15,11 +15,14 @@
     unstage = "reset HEAD"
     last = "log -1"
     lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    pl = "pull"
     d = difftool
 [user]
     name = wendajiang
     email = wendajiang93@163.com
 
+[pull]
+    rebase = true
 
 [diff]
     tool = vimdiff
@@ -39,4 +42,7 @@
 [rerere]
 	enabled = true
 [core]
+    editor = vim
     excludesfile = ~/.gitignore_global
+[commit]
+	template = /Users/david/d-vim/commit-template
