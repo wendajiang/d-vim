@@ -161,6 +161,7 @@ export PATH="$GOPATH/bin:$PATH"
 # end autojump configuration
 
 alias code=\''/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'\'
+alias clion='open -na "CLion.app"'
 
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -200,6 +201,9 @@ export PATH="/usr/local/sbin:$PATH"
 export NODE_PATH='/usr/local/lib/node_modules'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export CPPFLAGS="-I/opt/homebrew/include:$CPPFLAGS"
+export CFLAGS="-I/opt/homebrew/include:$CFLAGS"
 
 # openssl path m1
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
@@ -250,6 +254,7 @@ export GTAGSLABEL='native-pygments'
 
 # export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 # export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+alias cn="cargo +nightly"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -259,3 +264,7 @@ export GTAGSLABEL='native-pygments'
 [[ ! -f /Users/david/.config/broot/launcher/bash/br ]] || source /Users/david/.config/broot/launcher/bash/br
 
 eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
