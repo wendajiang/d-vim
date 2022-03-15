@@ -18,7 +18,7 @@
     pl = "pull"
     d = difftool
 [user]
-    name = wendajiang
+	name = David
     email = wendajiang93@163.com
 
 [pull]
