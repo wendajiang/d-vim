@@ -245,6 +245,13 @@ alias python="python3"
 export PATH="/usr/local/bin/:$PATH"
 export tbb_path=/usr/local/Cellar/tbb/2020_U1/
 
+# llvm
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib:$LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include:$CPPFLAGS"
+
+
+
 export EDITOR=vim
 alias vf='vim $(fzf)'
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build} --type f"
