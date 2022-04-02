@@ -250,7 +250,8 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib:$LDFLAGS"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include:$CPPFLAGS"
 
-
+# binutils m1 path
+export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
 
 export EDITOR=vim
 alias vf='vim $(fzf)'
