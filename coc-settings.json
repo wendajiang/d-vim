@@ -181,8 +181,6 @@
 	"json.format.enable": true,
 	"todolist.autoUpload": true,
 	"todolist.promptForReminder":false,
-	"coc-actions.hideCursor": false,
-	"coc-actions.showActionKind": true,
 	"clangd.enabled": true,
 	"clangd.arguments": [
 		"-compile-commands-dir=/Users/david/d-vim/"
@@ -195,9 +193,9 @@
 	"clangd.fallbackFlags": [
 		
 	],
-	"clangd.semanticHighlighting": true,
-	"clangd.serverCompletionRanking": true,
-	"diagnostic-languageserver.filetypes": {
+    "rust-analyzer.server.path": "/opt/homebrew/bin/rust-analyzer",
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "diagnostic-languageserver.filetypes": {
 		"vim": "vint",
 		"email": "languagetool",
 		"markdown": [ "write-good", "markdownlint" ],
@@ -233,11 +231,6 @@
 			"args": ["start"],
 			"filetypes": ["sh"],
 			"ignoredRootPaths": []
-        },
-        "rust": {
-            "command": "rust-analyzer",
-            "filetypes": ["rust"],
-            "rootPatterns": ["Cargo.toml"]
         }
 	}
 
