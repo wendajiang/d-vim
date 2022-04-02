@@ -621,12 +621,15 @@ vnoremap > >gv
 " y$ -> Y Make Y behave like other capitals
 map Y y$
 
+
+if !has("nvim")
 " terminal 模式关闭terminal
 " :help Terminal-mode
 tnoremap <leader><ESC> <C-w>:q!<CR>
 " terminal window size 
 " :help termwinsize
 set termwinsize=20*0
+endif 
 
 " window below
 set splitbelow
@@ -712,8 +715,6 @@ autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 tex
 
 " disable showmatch when use > in php
 au BufWinEnter *.php set mps-=<:>
-
-
 
 " 保存文件时删除多余空格
 fun! <SID>StripTrailingWhitespaces()
