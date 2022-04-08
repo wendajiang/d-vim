@@ -80,6 +80,7 @@ plugins=(
     git
     zsh-syntax-highlighting
     zsh-autosuggestions
+    fzf-tab
     autojump
     )
 
