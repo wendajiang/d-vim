@@ -11,9 +11,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 # if [[ $ZSH_VERSION > "5.1" ]] {
-    # ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 # } else {
-    # ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
 # }
 
 DEFAULT_USER="david"
@@ -82,7 +82,7 @@ plugins=(
     zsh-autosuggestions
     fzf-tab
     autojump
-    )
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -122,8 +122,7 @@ export GOPROXY=https://goproxy.io,direct
 # 还可以设置不走 proxy 的私有仓库或组，多个用逗号相隔（可选）
 # export GOPRIVATE=git.mycompany.com,github.com/my/private
 
-export PATH="/usr/local/go:$PATH"
-export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
 function proxy_off() {
@@ -157,25 +156,17 @@ function delete_bedge() {
 #export PATH="$HOME/anaconda3/envs/py2/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
-# autojump 
+# autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # end autojump configuration
 
 alias code=\''/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'\'
 alias clion='open -na "CLion.app"'
 
-
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 #source $ZSH/oh-my-zsh.sh
 
 #export PROMPT='${ret_status} %{$fg[cyan]%}%n@[$PWD]%{$reset_color%} $(git_prompt_info)'
-
-#alias gcc='/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/gcc-4.9'
-#alias g++='/usr/local/Cellar/gcc@4.9/4.9.4_1/bin/g++-4.9'
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export PATH="/usr/local/opt/protobuf@3.7/bin:$PATH"
-
-
 
 export PATH="$PATH:$HOME/.ft"
 
@@ -194,65 +185,13 @@ export PATH="$PATH:$HOME/.ft"
 #unset __conda_setup
 ## <<< conda initialize <<<
 
-# macos m1 path
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt:$PATH"
-
-export PATH="/usr/local/sbin:$PATH"
-export NODE_PATH='/usr/local/lib/node_modules'
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export CPPFLAGS="-I/opt/homebrew/include:$CPPFLAGS"
-export CFLAGS="-I/opt/homebrew/include:$CFLAGS"
-
-# openssl path m1
-export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib:$LDFLAGS"
-export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include:$CPPFLAGS"
-export CFLAGS="-I/opt/homebrew/opt/openssl@3/include:$CFLAGS"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-# mysql-client path m1
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib:$LDFLAGS"
-export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include/mysql:$CPPFLAGS"
-export CFLAGS="-I/opt/homebrew/opt/mysql-client/include/mysql:$CFLAGS"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-# icu4c pkg-config
-export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-# harfbuzz path m1 
-# export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/harfbuzz/lib:$LDFLAGS"
-export CPPFLAGS="-I/opt/homebrew/opt/harfbuzz/include:$CPPFLAGS"
-export CFLAGS="-I/opt/homebrew/opt/harfbuzz/include:$CFLAGS"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/harfbuzz/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-# java path m1
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include:$CPPFLAGS"
-export CFLAGS="-I/opt/homebrew/opt/openjdk/include:$CFLAGS"
-
-# gnubin make path
-export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 alias ls="lsd"
 alias typora="open -a typora"
 alias mweb="open -a mweb"
 alias py2="source ~/pytools/py2/bin/activate"
 alias python="python3"
-export PATH="/usr/local/bin/:$PATH"
-export tbb_path=/usr/local/Cellar/tbb/2020_U1/
-
-# llvm
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib:$LDFLAGS"
-export CPPFLAGS="-I/opt/homebrew/opt/llvm/include:$CPPFLAGS"
-
-# binutils m1 path
-export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
 
 export EDITOR=vim
 alias vf='vim $(fzf)'
@@ -265,6 +204,8 @@ export GTAGSLABEL='native-pygments'
 # export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 alias cn="cargo +nightly"
 
+source $HOME/.pathrc
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -275,5 +216,5 @@ alias cn="cargo +nightly"
 eval "$(starship init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
