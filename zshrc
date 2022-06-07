@@ -112,8 +112,6 @@ export ARCHFLAGS="-arch arm64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#export LDFLAGS="-L/usr/local/opt/ruby/lib"
-#export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export GOPATH=$HOME/go
 # 启用 Go Modules 功能
 export GO111MODULE=on
