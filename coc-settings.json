@@ -193,7 +193,7 @@
 	"clangd.fallbackFlags": [
 		
 	],
-    "rust-analyzer.server.path": "/opt/homebrew/bin/rust-analyzer",
+    "rust-analyzer.server.path": "/Users/david/.rustup/toolchains/stable-aarch64-apple-darwin/bin",
     "rust-analyzer.checkOnSave.command": "clippy",
     "diagnostic-languageserver.filetypes": {
 		"vim": "vint",
