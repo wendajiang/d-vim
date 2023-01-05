@@ -1319,8 +1319,8 @@ call plug#end()
     let g:VM_maps['Find Subword Under'] = '<C-n>'           " replace visual C-n
     let g:VM_maps["Select l"]           = '<S-Right>'       " start selecting left
     let g:VM_maps["Select h"]           = '<S-Left>'        " start selecting right
-    let g:VM_maps["Select Cursor Down"] = '<C-Down>'      " start selecting down
-    let g:VM_maps["Select Cursor Up"]   = '<C-Up>'        " start selecting up
+    let g:VM_maps["Select Cursor Down"] = '<S-Down>'      " start selecting down
+    let g:VM_maps["Select Cursor Up"]   = '<S-Up>'        " start selecting up
     let g:VM_maps["Add Cursor Down"]    = '<S-Down>'
     let g:VM_maps["Add Cursor Up"]      = '<S-Up>'
 
