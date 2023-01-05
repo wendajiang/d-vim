@@ -198,6 +198,12 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O 
 export GTAGSCONF='/usr/local/share/gtags/gtags.conf'
 export GTAGSLABEL='native-pygments'
 
+
+# antlr 
+export CLASSPATH=".:/usr/local/lib/antlr-4.10.1-complete.jar:$CLASSPATH"
+alias antlr4='java -jar /usr/local/lib/antlr-4.10.1-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+
 # export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 # export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 alias cn="cargo +nightly"

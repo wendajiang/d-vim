@@ -70,4 +70,22 @@ export CPPFLAGS="-I/opt/homebrew/opt/radare2/include $CPPFLAGS"
 # binutils m1 path
 export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
 
+# flex and bison
+export PATH="/opt/homebrew/opt/flex/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/flex/lib $LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/opt/flex/include $CPPFLAGS"
+export PATH="/opt/homebrew/opt/bison/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/bison/lib $LDFLAGS"
+
+# texinfo
+export PATH="/opt/homebrew/opt/texinfo/bin:$PATH"
+
+# m4
+export PATH="/opt/homebrew/opt/m4/bin:$PATH"
+
+# gnu-indent
+export PATH="/opt/homebrew/opt/gnu-indent/libexec/gnubin:$PATH"
+
 export PATH="/Users/david/node_modules/vsc-leetcode-cli/bin:$PATH"
+
+export PATH="$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin:$PATH"
