@@ -763,7 +763,7 @@ endif
 """""新文件标题
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "新建.c,.h,.sh,.java文件，自动插入文件头
-autocmd BufNewFile *.cpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()"
+autocmd BufNewFile *.cpp,*.cc,*.hpp,*.[ch],*.sh,*.rb,*.java,*.py exec ":call SetTitle()"
 ""定义函数SetTitle，自动插入文件头
 func SetTitle()
     "如果文件类型为.sh文件
@@ -784,14 +784,14 @@ func SetTitle()
         "        call setline(1,"<head><meta charset=\"UTF-8\"></head>")
     else
         call setline(1, "/*************************************************************************")
-        call append(line("."), "    > File Name: ".expand("%"))
+        call append(line("."),   "  > File Name: ".expand("%"))
         call append(line(".")+1, "  > Author: ")
         call append(line(".")+2, "  > Mail: ")
         call append(line(".")+3, "  > Created Time: ".strftime("%c"))
         call append(line(".")+4, " ************************************************************************/")
         call append(line(".")+5, "")
     endif
-    if expand("%:e") == 'cpp'
+    if expand("%:e") == 'cpp' || expand("%:e") == 'cc'
         call append(line(".")+6, "// #include <bits/stdc++.h>")
         call append(line(".")+7, "#include <iostream>")
         call append(line(".")+8, "#include <vector>")
@@ -812,10 +812,9 @@ func SetTitle()
         call append(line(".")+7, "#include<stdlib.h>")
         call append(line(".")+8, "")
     endif
-    if expand("%:e") == 'h'
-        call append(line(".")+6, "#ifndef _".toupper(expand("%:r"))."_H")
-        call append(line(".")+7, "#define _".toupper(expand("%:r"))."_H")
-        call append(line(".")+8, "#endif")
+    if expand("%:e") == 'h' || expand("%:e") == 'hpp'
+        call append(line(".")+6, "#pragma once")
+        call append(line(".")+7, "")
     endif
     if &filetype == 'java'
         call append(line(".")+6,"public class ".expand("%:r"))
