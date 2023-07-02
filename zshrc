@@ -210,6 +210,9 @@ alias cn="cargo +nightly"
 
 source $HOME/.pathrc
 
+alias emacs='emacs -nw'
+alias emacs_restart='brew services restart d12frosted/emacs-plus/emacs-plus@30'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

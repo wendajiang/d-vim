@@ -931,7 +931,7 @@ if count(g:plugged_groups, 'python')
 
     " isort  https://github.com/timothycrosley/isort#readme + https://github.com/fisadev/vim-isort#installation
     " pip install isort
-    Plug 'fisadev/vim-isort'
+    " Plug 'fisadev/vim-isort'
     " Shift-V 上下选中, ctrl + i 规范化
     " let g:vim_isort_map = '<C-i>'
 endif
