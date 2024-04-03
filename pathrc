@@ -58,9 +58,9 @@ export LDFLAGS="-L/opt/homebrew/opt/llvm/lib $LDFLAGS"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include $CPPFLAGS"
 
 # qt5
-export PATH="/opt/homebrew/opt/qt5/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/qt5/lib $LDFLAGS"
-export CPPFLAGS="-I/opt/homebrew/opt/qt5/include $CPPFLAGS"
+# export PATH="/opt/homebrew/opt/qt5/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/qt5/lib $LDFLAGS"
+# export CPPFLAGS="-I/opt/homebrew/opt/qt5/include $CPPFLAGS"
 
 # radare2
 export PATH="/opt/homebrew/opt/radare2/bin:$PATH"
@@ -89,3 +89,5 @@ export PATH="/opt/homebrew/opt/gnu-indent/libexec/gnubin:$PATH"
 export PATH="/Users/david/node_modules/vsc-leetcode-cli/bin:$PATH"
 
 export PATH="$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin:$PATH"
+
+export PATH="$PATH:$HOME/.config/emacs/bin"
