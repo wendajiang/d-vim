@@ -1,19 +1,13 @@
 {
-    "coc.preferences.hoverTarget": "preview",
-	"coc.preferences.enableFloatHighlight": true,
-	"coc.preferences.snippetStatusText": "Ⓢ ",
 	"coc.preferences.extensionUpdateCheck": "daily",
-	"suggest.detailMaxLength": 60,
+	"suggest.labelMaxLength": 60,
 	"suggest.noselect": true,
 	"suggest.enablePreselect": false,
 	"suggest.triggerAfterInsertEnter": false,
 	"suggest.timeout": 5000,
-	"suggest.enablePreview": true,
-	"suggest.floatEnable": true,
 	"suggest.detailField": "preview",
 	"suggest.snippetIndicator": "",
 	"suggest.triggerCompletionWait": 100,
-	"suggest.echodocSupport": true,
 	"suggest.completionItemKindLabels": {
 		"class": "\uf0e8",
 		"color": "\ue22b",
@@ -41,14 +35,12 @@
 		"value": "\uf89f",
 		"variable": "\ue71b"
 	},
-	"diagnostic.signOffset": 1,
 	"diagnostic.errorSign": "×",
 	"diagnostic.warningSign": "»",
 	"diagnostic.infoSign": "ღ",
 	"diagnostic.hintSign": "ஐ",
 	"diagnostic.displayByAle": false,
 	"diagnostic.refreshOnInsertMode": false,
-	"diagnostic.refreshAfterSave": false,
 	"diagnostic.checkCurrentLine": true,
 	"diagnostic.virtualTextPrefix": " ❯❯❯ ",
 	"diagnostic.virtualText": true,
@@ -64,7 +56,6 @@
 		"dart"
 	],
 	"signature.target": "float",
-	"yank.enableCompletion" : false,
 	"explorer.width": 30,
 	"explorer.quitOnOpen": false,
 	"explorer.sources": [
@@ -148,39 +139,7 @@
         "<<": "gitStage",
         ">>": "gitUnstage"
 	},
-	"git.enableGutters": true,
-	"git.branchCharacter":"\uf408",
-	"git.addGBlameToBufferVar": false,
-	"git.addGBlameToVirtualText": false,
-	"git.virtualTextPrefix": " ❯❯❯ ",
-	"git.addedSign.hlGroup": "GitGutterAdd",
-	"git.changedSign.hlGroup": "GitGutterChange",
-	"git.removedSign.hlGroup": "GitGutterDelete",
-	"git.topRemovedSign.hlGroup": "GitGutterDelete",
-	"git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
-	"git.addedSign.text":"▎",
-	"git.changedSign.text":"░",
-	"git.removedSign.text":"▏",
-	"git.topRemovedSign.text": "▔",
-	"git.changeRemovedSign.text": "▒",
-	"git.enableGlobalStatus": false,
-	"git.signOffset": 2,
-	"tslint.autoFixOnSave": true,
-	"python.autoComplete.addBrackets": true,
-	"python.jediEnabled": false,
-	"python.formatting.provider": "autopep8",
-	"python.formatting.yapfArgs": [
-				"--style",
-				"{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
-		],
-	"html.format.enable": true,
-	"javascript.referencesCodeLens.enable": true,
-	"javascript.showUnused": true,
-	"javascript.suggest.names": true,
-	"javascript.suggestionActions.enabled": true,
 	"json.format.enable": true,
-	"todolist.autoUpload": true,
-	"todolist.promptForReminder":false,
 	"clangd.enabled": true,
 	"clangd.arguments": [
 		"-compile-commands-dir=/Users/david/d-vim/"
@@ -194,22 +153,6 @@
 		
 	],
     "rust-analyzer.server.path": "/Users/david/.rustup/toolchains/stable-aarch64-apple-darwin/bin",
-    "rust-analyzer.checkOnSave.command": "clippy",
-    "diagnostic-languageserver.filetypes": {
-		"vim": "vint",
-		"email": "languagetool",
-		"markdown": [ "write-good", "markdownlint" ],
-		"sh": "shellcheck",
-		"elixir": ["mix_credo", "mix_credo_compile"],
-		"eelixir": ["mix_credo", "mix_credo_compile"],
-		"php": ["phpstan", "psalm"],
-		"dart": "dartfmt"
-	},
-	"diagnostic-languageserver.formatFiletypes": {
-		"dart": "dartfmt",
-		"elixir": "mix_format",
-		"eelixir": "mix_format"
-	},
 	"languageserver": {
 		"lua": {
 			"command": "lua-lsp",
@@ -219,7 +162,6 @@
 			"command": "gopls",
 			"rootPatterns": ["go.mod"],
 			"filetypes": ["go"],
-            "disableWorkspaceFolders": true
         },
         "dockerfile": {
             "command": "docker-langserver",
