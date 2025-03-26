@@ -54,3 +54,5 @@
     excludesfile = ~/.gitignore_global
 [commit]
 	template = /Users/david/d-vim/commit-template
+[init]
+	defaultBranch = main
