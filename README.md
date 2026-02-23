@@ -2,6 +2,10 @@ d-vim(包含tmux配置)
 =======================
 
 
+@todo https://gist.github.com/manasthakur/ab4cf8d32a28ea38271ac0d07373bb53
+
+clean plugin and use vim8 packages
+
 # 目标
 
 > Just a Better Vim Config. Keep it Simple.

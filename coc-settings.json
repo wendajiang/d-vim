@@ -161,7 +161,7 @@
 		"golang": {
 			"command": "gopls",
 			"rootPatterns": ["go.mod"],
-			"filetypes": ["go"],
+			"filetypes": ["go"]
         },
         "dockerfile": {
             "command": "docker-langserver",
@@ -175,5 +175,4 @@
 			"ignoredRootPaths": []
         }
 	}
-
 }

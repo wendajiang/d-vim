@@ -220,6 +220,7 @@ alias emacs_restart='brew services restart d12frosted/emacs-plus/emacs-plus@30'
 [[ ! -f /Users/david/.config/broot/launcher/bash/br ]] || source /Users/david/.config/broot/launcher/bash/br
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"

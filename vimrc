@@ -24,7 +24,8 @@
 
 " 修改leader键
 let mapleader = ','
-let g:mapleader = ','
+" let g:mapleader = ','
+noremap \ ,
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
