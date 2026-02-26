@@ -843,6 +843,9 @@ endfunction
 
 command! UpdateTimestamps call s:UpdateTimestamps()
 
+iab xtime <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
+
+
 " close buffer smart
 noremap <leader>x :bp<cr>:bd #<cr>
 
@@ -899,6 +902,7 @@ hi! link ShowMarksHLl DiffAdd
 hi! link ShowMarksHLu DiffChange
 
 " for error highlight，防止错误整行标红导致看不清
+" set spell
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
 highlight clear SpellCap
