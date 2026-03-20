@@ -23,7 +23,7 @@ if [ "$sysOS" = "Darwin" ]; then
     brew install --cask font-hack-nerd-font
     brew install autojump
     brew install starship
-    echo '[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh' >>~/.zshrc
+    #echo '[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh' >>~/.zshrc
     echo 'source $ZSH/oh-my-zsh.sh' >>~/.zshrc
 elif [ "$sysOS" = "Linux" ]; then
     #linux
@@ -49,7 +49,7 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 # git clone https://github.com/bhilburn/powerlevel9k.git $ZSH_CUSTOM/themes/powerlevel9k
 
 # install powerlevel10k/powerlevel10k
-# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # reference
 # see: https://www.zrahh.com/archives/167.html
