@@ -183,7 +183,6 @@ export PATH="$PATH:$HOME/.ft"
 #unset __conda_setup
 ## <<< conda initialize <<<
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 alias ls="lsd"
 alias typora="open -a typora"
@@ -209,8 +208,6 @@ alias grun='java org.antlr.v4.gui.TestRig'
 alias cn="cargo +nightly"
 
 source $HOME/.pathrc
-
-alias emacs_restart='brew services restart d12frosted/emacs-plus/emacs-plus@30'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

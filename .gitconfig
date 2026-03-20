@@ -53,6 +53,6 @@
     editor = vim
     excludesfile = ~/.gitignore_global
 [commit]
-	template = /Users/david/d-vim/commit-template
+	template = ~/d-vim/commit-template
 [init]
 	defaultBranch = main
