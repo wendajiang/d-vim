@@ -154,14 +154,6 @@ function delete_bedge() {
 #export PATH="$HOME/anaconda3/envs/py2/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
-# autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-# end autojump configuration
-
-alias code=\''/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'\'
-alias clion='open -na "CLion.app"'
-
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 #source $ZSH/oh-my-zsh.sh
 
 #export PROMPT='${ret_status} %{$fg[cyan]%}%n@[$PWD]%{$reset_color%} $(git_prompt_info)'
@@ -184,12 +176,6 @@ export PATH="$PATH:$HOME/.ft"
 ## <<< conda initialize <<<
 
 
-alias ls="lsd"
-alias typora="open -a typora"
-alias mweb="open -a mweb"
-alias py2="source ~/pytools/py2/bin/activate"
-alias python="python3"
-
 export EDITOR=vim
 alias vf='vim $(fzf)'
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build} --type f"
@@ -197,46 +183,78 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O 
 export GTAGSCONF='/usr/local/share/gtags/gtags.conf'
 export GTAGSLABEL='native-pygments'
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+system_name=$(uname -s)
+case "${system_name}" in
+  Linux*)
+    ;;
+  Darwin*)
+    alias ls="lsd"
+    alias typora="open -a typora"
+    alias mweb="open -a mweb"
+    alias py2="source ~/pytools/py2/bin/activate"
+    alias python="python3"
+
+    export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+    export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+    export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+    export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+    export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
+    
+    # export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+    # export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+    # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+    # export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+    # export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+    #for tap in core cask{,-fonts,-versions} command-not-found services; do
+        #brew tap --custom-remote --force-auto-update "homebrew/${tap}" "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-${tap}.git"
+    #done
+
+    # autojump
+    [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+    # end autojump configuration
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+    
+    alias code=\''/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'\'
+    alias clion='open -na "CLion.app"'
+
+    source $HOME/.pathrc
+    [[ ! -f /Users/david/.config/broot/launcher/bash/br ]] || source /Users/david/.config/broot/launcher/bash/br
+
+    # BEGIN opam configuration
+    # This is useful if you're using opam as it adds:
+    #   - the correct directories to the PATH
+    #   - auto-completion for the opam binary
+    # This section can be safely removed at any time if needed.
+    [[ ! -r '/Users/david/.opam/opam-init/init.zsh' ]] || source '/Users/david/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+    # END opam configuration
+
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+    ;;
+  *)
+    echo "Unsupported system: ${system_name}"
+    ;;
+esac
 
 # antlr 
 export CLASSPATH=".:/usr/local/lib/antlr-4.10.1-complete.jar:$CLASSPATH"
 alias antlr4='java -jar /usr/local/lib/antlr-4.10.1-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
 
-# export RUSTUP_DIST_SERVER="https://rsproxy.cn"
-# export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
-alias cn="cargo +nightly"
-
-source $HOME/.pathrc
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-[[ ! -f /Users/david/.config/broot/launcher/bash/br ]] || source /Users/david/.config/broot/launcher/bash/br
-
+# or 
 eval "$(starship init zsh)"
+
 eval "$(zoxide init zsh)"
 
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+alias cn="cargo +nightly"
 
-# export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
-# export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
-# export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
-# export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
-# export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
-export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
-#for tap in core cask{,-fonts,-versions} command-not-found services; do
-    #brew tap --custom-remote --force-auto-update "homebrew/${tap}" "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-${tap}.git"
-#done
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
