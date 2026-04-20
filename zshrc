@@ -123,18 +123,6 @@ export GOPROXY=https://goproxy.io,direct
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 
-function proxy_off() {
-    unset http_proxy
-    unset https_proxy
-    echo -e "已关闭代理"
-}
-function proxy_on() {
-    export no_proxy="localhost,127.0.0.1"
-    export http_proxy="http://127.0.0.1:7890"
-    export https_proxy=$http_proxy
-    echo -e "已开启代理"
-}
-
 function git_proxy_on() {
     git config --global http.https://github.com.proxy http://127.0.0.1:7890
     git config --global https.https://github.com.proxy https://127.0.0.1:7890
@@ -151,10 +139,7 @@ function delete_bedge() {
     softwareupdate --list
 }
 # export PATH="/usr/local/bin:$HOME/anaconda3/bin:$PATH"  # commented out by conda initialize
-#export PATH="$HOME/anaconda3/envs/py2/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
-
-#source $ZSH/oh-my-zsh.sh
 
 #export PROMPT='${ret_status} %{$fg[cyan]%}%n@[$PWD]%{$reset_color%} $(git_prompt_info)'
 
@@ -180,9 +165,6 @@ export EDITOR=vim
 alias vf='vim $(fzf)'
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build} --type f"
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
-export GTAGSCONF='/usr/local/share/gtags/gtags.conf'
-export GTAGSLABEL='native-pygments'
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 system_name=$(uname -s)
@@ -195,6 +177,9 @@ case "${system_name}" in
     alias mweb="open -a mweb"
     alias py2="source ~/pytools/py2/bin/activate"
     alias python="python3"
+
+    export GTAGSCONF='/usr/local/share/gtags/gtags.conf'
+    export GTAGSLABEL='native-pygments'
 
     export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
     export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
@@ -234,27 +219,26 @@ case "${system_name}" in
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
+    # antlr 
+    export CLASSPATH=".:/usr/local/lib/antlr-4.10.1-complete.jar:$CLASSPATH"
+    alias antlr4='java -jar /usr/local/lib/antlr-4.10.1-complete.jar'
+    alias grun='java org.antlr.v4.gui.TestRig'
+
+    eval "$(starship init zsh)"
+    
+    eval "$(zoxide init zsh)"
+    
+    export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+    export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+    alias cn="cargo +nightly"
+
     ;;
   *)
     echo "Unsupported system: ${system_name}"
     ;;
 esac
 
-# antlr 
-export CLASSPATH=".:/usr/local/lib/antlr-4.10.1-complete.jar:$CLASSPATH"
-alias antlr4='java -jar /usr/local/lib/antlr-4.10.1-complete.jar'
-alias grun='java org.antlr.v4.gui.TestRig'
-
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # or 
-eval "$(starship init zsh)"
-
-eval "$(zoxide init zsh)"
-
-export RUSTUP_DIST_SERVER="https://rsproxy.cn"
-export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
-alias cn="cargo +nightly"
-
 
