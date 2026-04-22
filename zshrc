@@ -244,6 +244,7 @@ case "${system_name}" in
     # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
     # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
     # maybe use the alternative https://github.com/Schniz/fnm that is written by Rust
+    eval "$(fnm env --use-on-cd --shell zsh)"
 
 
     # antlr 
@@ -273,4 +274,7 @@ if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi
 
+function timezsh() {
+    time ZSH_DEBUGRC=1 zsh -i -c exit
+}
 # time ZSH_DEBUGRC=1 zsh -i -c exit
