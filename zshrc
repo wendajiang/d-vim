@@ -7,6 +7,9 @@
 # Zsh configuration
 # -----------------
 
+if [ -n "${ZSH_DEBUGRC+1}" ]; then
+    zmodload zsh/zprof
+fi
 #
 # History
 #
@@ -237,9 +240,9 @@ case "${system_name}" in
     [[ ! -r '/Users/david/.opam/opam-init/init.zsh' ]] || source '/Users/david/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
     # END opam configuration
 
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+    # export NVM_DIR="$HOME/.nvm"
+    # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+    # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
     # antlr 
     export CLASSPATH=".:/usr/local/lib/antlr-4.10.1-complete.jar:$CLASSPATH"
@@ -264,3 +267,8 @@ esac
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # or 
 
+if [ -n "${ZSH_DEBUGRC+1}" ]; then
+    zprof
+fi
+
+# time ZSH_DEBUGRC=1 zsh -i -c exit
