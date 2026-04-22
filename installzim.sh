@@ -28,15 +28,15 @@ else
     echo "Other OS: $sysOS"
 fi
 
-ZSH_CUSTOM=$HOME/.zim
+# ZSH_CUSTOM=$HOME/.zim
 # install zsh-autosuggestion
-git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/modules/zsh-autosuggestions
-
-# install zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/modules/zsh-syntax-highlighting
-
-# install fzf-tab
-git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM}/modules/fzf-tab
+# git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/modules/zsh-autosuggestions
+# 
+# # install zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/modules/zsh-syntax-highlighting
+# 
+# # install fzf-tab
+# git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM}/modules/fzf-tab
 
 # install powerlevel9k/powerlevel9k
 # git clone https://github.com/bhilburn/powerlevel9k.git $ZSH_CUSTOM/themes/powerlevel9k
