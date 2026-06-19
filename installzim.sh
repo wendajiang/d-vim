@@ -8,6 +8,20 @@
 
 curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 
+# install autojump
+sysOS=$(uname -s)
+curl -sS https://starship.rs/install.sh | sh
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+if [ "$sysOS" = "Darwin" ]; then
+    # macos
+    brew tap homebrew/cask-fonts
+    brew install --cask font-hack-nerd-font
+elif [ "$sysOS" = "Linux" ]; then
+    #linux
+else
+    echo "Other OS: $sysOS"
+fi
+
 # cp zshrc to ~/.zshrc
 mv ~/.zshrc ~/.zshrc.bak
 ln -sf ~/d-vim/zshrc ~/.zshrc
@@ -15,18 +29,6 @@ mv ~/.pathrc ~/.pathrc.bak
 ln -f ~/d-vim/pathrc ~/.pathrc
 ln -f ~/d-vim/zimrc ~/.zimrc
 
-# install autojump
-sysOS=$(uname -s)
-if [ "$sysOS" = "Darwin" ]; then
-    # macos
-    brew tap homebrew/cask-fonts
-    brew install --cask font-hack-nerd-font
-    brew install starship
-elif [ "$sysOS" = "Linux" ]; then
-    #linux
-else
-    echo "Other OS: $sysOS"
-fi
 
 # ZSH_CUSTOM=$HOME/.zim
 # install zsh-autosuggestion

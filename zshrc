@@ -248,10 +248,6 @@ case "${system_name}" in
     alias antlr4='java -jar /usr/local/lib/antlr-4.10.1-complete.jar'
     alias grun='java org.antlr.v4.gui.TestRig'
 
-    eval "$(starship init zsh)"
-    
-    eval "$(zoxide init zsh)"
-    
     export RUSTUP_DIST_SERVER="https://rsproxy.cn"
     export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
     alias cn="cargo +nightly"
@@ -261,6 +257,9 @@ case "${system_name}" in
     echo "Unsupported system: ${system_name}"
     ;;
 esac
+
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
